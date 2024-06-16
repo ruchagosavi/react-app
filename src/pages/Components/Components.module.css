@@ -2,7 +2,6 @@
 
 .componentsContainer {
     padding: 2rem;
-    text-align: center;
   }
   
   .heroSection {
@@ -10,6 +9,7 @@
     padding: 2rem;
     border-radius: 8px;
     margin-bottom: 2rem;
+    text-align: center;
   }
   
   .heroSection h1 {
@@ -44,31 +44,47 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
-  .designBlocksSection h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+  .sectionsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
   }
   
-  .designBlocksSection p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
+  .section {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .sectionHeading {
+    flex: 1;
+    font-size: 1.5rem;
+    font-weight: bold;
+    align-self: start;
   }
   
   .blocksContainer {
-    display: flex;
-    justify-content: space-around;
+    flex: 4;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
   }
   
   .block {
-    background-color: #f0f0f0;
+    background-color: #fff;
     border-radius: 8px;
     padding: 1rem;
-    width: 150px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
     text-align: center;
   }
   
+  .block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
   .blockImage {
-    background-color: #ccc;
+    background-color: #f0f0f0;
     height: 100px;
     border-radius: 8px;
     display: flex;
@@ -77,49 +93,147 @@
     margin-bottom: 1rem;
   }
   
-  .block p {
+  .blockContent {
+    text-align: center;
+  }
+  
+  .blockTitle {
     font-size: 1rem;
     font-weight: bold;
   }
   
+  .blockCount {
+    font-size: 0.875rem;
+    color: #666;
+  }
+  
   /* Media Queries */
   
-  /* Smartphones (portrait and landscape) */
+  /* Smartphones (portrait and landscape) ----------- */
   @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-    .blocksContainer {
+    .sectionsContainer {
+      gap: 2rem;
+    }
+  
+    .section {
       flex-direction: column;
-      align-items: center;
+      gap: 1rem;
     }
   
-    .block {
-      width: 100%;
-      margin-bottom: 1rem;
+    .blocksContainer {
+      grid-template-columns: 1fr;
     }
   }
   
-  /* Tablets (portrait and landscape) */
+  /* Smartphones (landscape) ----------- */
+  @media only screen and (min-width: 321px) {
+    .sectionsContainer {
+      gap: 2rem;
+    }
+  
+    .section {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .blocksContainer {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* Smartphones (portrait) ----------- */
+  @media only screen and (max-width: 320px) {
+    .sectionsContainer {
+      gap: 2rem;
+    }
+  
+    .section {
+      flex-direction: column;
+      gap: 1rem;
+    }
+  
+    .blocksContainer {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  /* iPads (portrait and landscape) ----------- */
   @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    .blocksContainer {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: space-around;
+    .sectionsContainer {
+      gap: 3rem;
     }
   
-    .block {
-      width: 45%;
-      margin-bottom: 1rem;
+    .section {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  
+    .blocksContainer {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
   
-  /* Desktops and larger devices */
-  @media only screen and (min-width: 1224px) {
-    .blocksContainer {
-      flex-direction: row;
-      justify-content: space-around;
+  /* iPads (landscape) ----------- */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+    .sectionsContainer {
+      gap: 3rem;
     }
   
-    .block {
-      width: 150px;
+    .section {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  
+    .blocksContainer {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  /* iPads (portrait) ----------- */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+    .sectionsContainer {
+      gap: 3rem;
+    }
+  
+    .section {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  
+    .blocksContainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Desktops and laptops ----------- */
+  @media only screen and (min-width: 1224px) {
+    .sectionsContainer {
+      gap: 3rem;
+    }
+  
+    .section {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  
+    .blocksContainer {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  /* Large screens ----------- */
+  @media only screen and (min-width: 1824px) {
+    .sectionsContainer {
+      gap: 3rem;
+    }
+  
+    .section {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  
+    .blocksContainer {
+      grid-template-columns: repeat(5, 1fr);
     }
   }
   
