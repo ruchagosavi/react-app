@@ -1,17 +1,17 @@
 // src/components/Navbar/Navbar.tsx
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import { FaUserCircle } from 'react-icons/fa';
+import { AuthContext } from '../../context/AuthContext'; // Ensure this path is correct
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false); // Track login state
+  const { authState } = useContext(AuthContext); // Use auth context to get login state
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
   };
-  
 
   return (
     <nav className={styles.navbar}>
@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
           <Link to="/examples" className={styles.navLink} onClick={toggleMobileMenu}>Examples</Link>
         </li>
         <li className={styles.userActions}>
-          {!isLoggedIn ? (
+          {!authState.token ? (
             <Link to="/signup" className={styles.navLink} onClick={toggleMobileMenu}>Sign Up</Link>
           ) : (
             <FaUserCircle className={styles.userIcon} />
