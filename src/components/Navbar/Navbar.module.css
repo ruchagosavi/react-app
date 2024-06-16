@@ -1,0 +1,262 @@
+/* src/components/Navbar/Navbar.module.css */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #d71e28; /* Wells Fargo red */
+  border-bottom: 6px solid #ffcd41; /* Thicker yellow border */
+  color: #fff;
+  border-top-left-radius: 10px; /* Rounded top left corner */
+  border-top-right-radius: 10px; /* Rounded top right corner */
+  position: relative;
+}
+
+.logo img {
+  height: 30px; /* Adjust the height as necessary */
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  color: #fff;
+  z-index: 1001; /* Ensure it's above the menu */
+}
+
+.closeIcon {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+}
+
+.navLink:hover {
+  color: #ffcd41; /* Yellow on hover */
+}
+
+.userActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.userIcon {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.userIcon:hover {
+  color: #ffcd41;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    z-index: 1001; /* Ensure it's above the menu */
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #d71e28;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .navLinks.open {
+    transform: translateX(0);
+  }
+
+  .navLink {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem; /* Responsive font size */
+  }
+
+  .userActions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .userActions .navLink {
+    padding: 0.5rem 0;
+  }
+
+  .userIcon {
+    font-size: 2.5rem;
+  }
+
+  .logo img {
+    height: 25px; /* Adjust the height as necessary */
+  }
+
+  .closeIcon {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1001; /* Ensure it's above the menu */
+  }
+}
+
+@media (min-width: 769px) {
+  .closeIcon {
+    display: none;
+  }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .navbar {
+    padding: 0.5rem 1rem;
+  }
+  .logo img {
+    height: 25px; /* Adjust the height as necessary */
+  }
+  .hamburger {
+    font-size: 1.5rem;
+  }
+  .navLink {
+    font-size: 1rem;
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  .navbar {
+    padding: 0.5rem 1.5rem;
+  }
+  .logo img {
+    height: 30px; /* Adjust the height as necessary */
+  }
+  .hamburger {
+    font-size: 1.8rem;
+  }
+  .navLink {
+    font-size: 1.1rem;
+  }
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 320px) {
+  .navbar {
+    padding: 0.5rem 0.8rem;
+  }
+  .logo img {
+    height: 20px; /* Adjust the height as necessary */
+  }
+  .hamburger {
+    font-size: 1.5rem;
+  }
+  .navLink {
+    font-size: 0.9rem;
+  }
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+  .logo img {
+    height: 30px; /* Adjust the height as necessary */
+  }
+  .hamburger {
+    font-size: 2rem;
+  }
+  .navLink {
+    font-size: 1.3rem;
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  .navbar {
+    padding: 1rem 2.5rem;
+  }
+  .logo img {
+    height: 35px; /* Adjust the height as necessary */
+  }
+  .hamburger {
+    font-size: 2.2rem;
+  }
+  .navLink {
+    font-size: 1.4rem;
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+  .logo img {
+    height: 30px; /* Adjust the height as necessary */
+  }
+  .hamburger {
+    font-size: 1.8rem;
+  }
+  .navLink {
+    font-size: 1.2rem;
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-width: 1224px) {
+  .navbar {
+    padding: 1.5rem 3rem;
+  }
+  .logo img {
+    height: 30px; /* Adjust the height as necessary */
+  }
+  .hamburger {
+    font-size: 2.5rem;
+  }
+  .navLink {
+    font-size: 1.6rem;
+  }
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width: 1824px) {
+  .navbar {
+    padding: 2rem 4rem;
+  }
+  .logo img {
+    height: 30px; /* Adjust the height as necessary */
+  }
+  .hamburger {
+    font-size: 3rem;
+  }
+  .navLink {
+    font-size: 1.8rem;
+  }
+}
