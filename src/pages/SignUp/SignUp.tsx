@@ -7,6 +7,7 @@ import styles from './SignUp.module.css';
 const SignUp: React.FC = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
   const handleSignUp = async (e: React.FormEvent) => {
@@ -15,6 +16,7 @@ const SignUp: React.FC = () => {
       await axios.post('/api/signup', { username, password });
       navigate('/login');
     } catch (error) {
+      setError('Sign up failed. Please try again.');
       console.error('Sign up failed', error);
     }
   };
@@ -37,6 +39,7 @@ const SignUp: React.FC = () => {
           onChange={(e) => setPassword(e.target.value)}
           required
         />
+        {error && <p className={styles.error}>{error}</p>}
         <button type="submit">Sign Up</button>
       </form>
     </div>

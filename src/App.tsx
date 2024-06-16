@@ -9,22 +9,29 @@ import Utilities from './pages/Utilities';
 import Documentation from './pages/Documentation';
 import Examples from './pages/Examples';
 import SignUp from './pages/SignUp/SignUp';
+import Login from './pages/Login/Login';
+
 import Footer from './components/Footer/Footer';
+import { AuthProvider } from './context/AuthContext';
 
 const App: React.FC = () => {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/components" element={<Components />} />
-        <Route path="/utilities" element={<Utilities />} />
-        <Route path="/documentation" element={<Documentation />} />
-        <Route path="/examples" element={<Examples />} />
-        <Route path="/signup" element={<SignUp/>}/>
-      </Routes>
-      <Footer></Footer>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/components" element={<Components />} />
+          <Route path="/utilities" element={<Utilities />} />
+          <Route path="/documentation" element={<Documentation />} />
+          <Route path="/examples" element={<Examples />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/login" element={<Login />} />
+
+        </Routes>
+        <Footer></Footer>
+      </Router>
+    </AuthProvider>
   );
 };
 

@@ -1,16 +1,25 @@
-// src/components/Navbar/Navbar.tsx
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
 import { FaUserCircle } from 'react-icons/fa';
-import { AuthContext } from '../../context/AuthContext'; // Ensure this path is correct
+import { AuthContext } from '../../context/AuthContext';
 
 const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const { authState } = useContext(AuthContext); // Use auth context to get login state
+  const [isProfileMenuOpen, setProfileMenuOpen] = useState(false); // State for profile menu
+  const { authState, setAuthState } = useContext(AuthContext); // Use auth context to get login state
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleProfileMenu = () => {
+    setProfileMenuOpen(!isProfileMenuOpen);
+  };
+
+  const handleLogout = () => {
+    setAuthState({ token: null, username: null });
+    localStorage.removeItem('token');
   };
 
   return (
@@ -43,7 +52,15 @@ const Navbar: React.FC = () => {
           {!authState.token ? (
             <Link to="/signup" className={styles.navLink} onClick={toggleMobileMenu}>Sign Up</Link>
           ) : (
-            <FaUserCircle className={styles.userIcon} />
+            <div className={styles.profileMenuContainer}>
+              <FaUserCircle className={styles.userIcon} onClick={toggleProfileMenu} />
+              {isProfileMenuOpen && (
+                <div className={styles.profileMenu}>
+                  <Link to="/profile" className={styles.navLink} onClick={toggleProfileMenu}>Profile</Link>
+                  <button className={styles.navLink} onClick={handleLogout}>Logout</button>
+                </div>
+              )}
+            </div>
           )}
         </li>
       </ul>
