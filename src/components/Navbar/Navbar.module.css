@@ -1,3 +1,5 @@
+/* src/components/Navbar/Navbar.module.css */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -63,14 +65,20 @@
   background-color: #fff;
   color: #000;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 8px; /* More rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+  overflow: hidden; /* Hide overflowing content */
+  min-width: 150px; /* Minimum width */
+  z-index: 1000; /* Ensure it's above other elements */
   display: flex;
   flex-direction: column;
 }
 
 .profileMenu .navLink {
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem; /* Increased padding for better touch targets */
   cursor: pointer;
+  text-align: left; /* Align text to the left */
+  color: #000; /* Change text color to black for visibility */
 }
 
 .profileMenu .navLink:hover {

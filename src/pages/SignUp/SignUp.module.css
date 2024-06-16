@@ -1,0 +1,253 @@
+/* src/pages/SignUp/SignUp.module.css */
+
+.signUpContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f8f8;
+  }
+  
+  .signUpBox {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    overflow: hidden; /* Add this line */
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+  
+  p {
+    margin-bottom: 1.5rem;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 0.5rem;
+    text-align: left;
+  }
+  
+  .passwordLabel {
+    position: relative;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .eyeIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #ccc;
+  }
+  
+  .saveUsername {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .saveUsername input {
+    margin-right: 0.5rem;
+  }
+  
+  .error {
+    color: red;
+    margin-bottom: 1rem;
+  }
+  
+  .signUpButton {
+    background-color: #d71e28; /* Wells Fargo red */
+    color: #fff;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  .loginButton {
+    background: none;
+    border: none;
+    color: #d71e28;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+  
+  .footerBox {
+    background-color: #f4f0ed;
+    padding: 1rem 2rem;
+    text-align: center;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    margin-bottom: -2rem; /* Add this line */
+  }
+  
+  .footerBox a {
+    display: block;
+    color: #000; /* Change to black */
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+  }
+  
+  .footerBox a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Media Queries */
+  
+  /* Smartphones (portrait and landscape) */
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .signUpBox {
+      padding: 1rem;
+    }
+  
+    h2 {
+      font-size: 1.25rem;
+    }
+  
+    p {
+      font-size: 0.875rem;
+    }
+  
+    input[type="text"],
+    input[type="password"] {
+      font-size: 0.875rem;
+    }
+  
+    .signUpButton,
+    .loginButton {
+      font-size: 0.875rem;
+    }
+  
+    .footerBox {
+      font-size: 0.75rem;
+      padding: 1rem 1rem;
+      margin-left: -1rem;
+      margin-right: -1rem;
+      margin-bottom: -1rem; /* Add this line */
+    }
+  }
+  
+  /* iPads (portrait and landscape) */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .signUpBox {
+      padding: 1.5rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    input[type="text"],
+    input[type="password"] {
+      font-size: 1rem;
+    }
+  
+    .signUpButton,
+    .loginButton {
+      font-size: 1rem;
+    }
+  
+    .footerBox {
+      font-size: 0.875rem;
+      padding: 1rem 1.5rem;
+      margin-left: -1.5rem;
+      margin-right: -1.5rem;
+      margin-bottom: -1.5rem; /* Add this line */
+    }
+  }
+  
+  /* Desktops and laptops */
+  @media only screen and (min-width: 1224px) {
+    .signUpBox {
+      padding: 2rem;
+    }
+  
+    h2 {
+      font-size: 1.5rem;
+    }
+  
+    p {
+      font-size: 1rem;
+    }
+  
+    input[type="text"],
+    input[type="password"] {
+      font-size: 1rem;
+    }
+  
+    .signUpButton,
+    .loginButton {
+      font-size: 1rem;
+    }
+  
+    .footerBox {
+      font-size: 0.875rem;
+      padding: 1rem 2rem;
+      margin-left: -2rem;
+      margin-right: -2rem;
+      margin-bottom: -2rem; /* Add this line */
+    }
+  }
+  
+  /* Large screens */
+  @media only screen and (min-width: 1824px) {
+    .signUpBox {
+      padding: 2.5rem;
+    }
+  
+    h2 {
+      font-size: 1.75rem;
+    }
+  
+    p {
+      font-size: 1.125rem;
+    }
+  
+    input[type="text"],
+    input[type="password"] {
+      font-size: 1.125rem;
+    }
+  
+    .signUpButton,
+    .loginButton {
+      font-size: 1.125rem;
+    }
+  
+    .footerBox {
+      font-size: 1rem;
+      padding: 1rem 2.5rem;
+      margin-left: -2.5rem;
+      margin-right: -2.5rem;
+      margin-bottom: -2.5rem; /* Add this line */
+    }
+  }
+  
