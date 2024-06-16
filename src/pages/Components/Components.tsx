@@ -65,9 +65,9 @@ import Navbar from '../../components/Navbar/Navbar';
 
 // Importing Media
 import ImageGallery from '../../components/ImageGallery/ImageGallery';
-//import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
-//import AudioPlayer from '../../components/AudioPlayer/AudioPlayer';
-//import Carousel from '../../components/Carousel/Carousel';
+/*import VideoPlayer from '../../components/VideoPlayer/VideoPlayer';
+import AudioPlayer from '../../components/AudioPlayer/AudioPlayer';
+import Carousel from '../../components/Carousel/Carousel';*/
 
 // Importing Data Display
 import Chart from '../../components/Chart/Chart';
@@ -85,77 +85,77 @@ const Components: React.FC = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const components = [
-    { name: 'Hero Sections', category: 'Hero Sections', count: 12, component: HeroSection },
-    { name: 'Feature Sections', category: 'Feature Sections', count: 18, component: FeatureSection },
-    { name: 'CTA Sections', category: 'CTA Sections', count: 11, component: CTASection },
-    { name: 'Pricing Sections', category: 'Pricing Sections', count: 13, component: PricingSection },
-    { name: 'Header Sections', category: 'Header Sections', count: 10, component: HeaderSection },
-    { name: 'Footer Sections', category: 'Footer Sections', count: 7, component: FooterSection },
-    { name: 'Testimonials Sections', category: 'Testimonials Sections', count: 7, component: TestimonialsSection },
-    { name: 'FAQ Sections', category: 'FAQ Sections', count: 5, component: FAQSection },
-    { name: 'Team Sections', category: 'Team Sections', count: 5, component: TeamSection },
-    { name: 'Newsletter Sections', category: 'Newsletter Sections', count: 7, component: NewsletterSection },
+    { name: 'Hero Section', category: 'Hero Section', count: 12, component: HeroSection },
+    { name: 'Feature Section', category: 'Feature Section', count: 18, component: FeatureSection },
+    { name: 'CTA Section', category: 'CTA Section', count: 11, component: CTASection },
+    { name: 'Pricing Section', category: 'Pricing Section', count: 13, component: PricingSection },
+    { name: 'Header Section', category: 'Header Section', count: 10, component: HeaderSection },
+    { name: 'Footer Section', category: 'Footer Section', count: 7, component: FooterSection },
+    { name: 'Testimonials Section', category: 'Testimonials Section', count: 7, component: TestimonialsSection },
+    { name: 'FAQ Section', category: 'FAQ Section', count: 5, component: FAQSection },
+    { name: 'Team Section', category: 'Team Section', count: 5, component: TeamSection },
+    { name: 'Newsletter Section', category: 'Newsletter Section', count: 7, component: NewsletterSection },
   ];
 
   const pages = [
-    { name: 'Landing Pages', category: 'Landing Pages', count: 5, component: LandingPage },
-    { name: 'About Pages', category: 'About Pages', count: 8, component: AboutPage },
-    { name: 'Contact Pages', category: 'Contact Pages', count: 4, component: ContactPage },
-    { name: 'Login Pages', category: 'Login Pages', count: 4, component: LoginPage },
-    { name: 'Registration Pages', category: 'Registration Pages', count: 4, component: RegistrationPage },
-    { name: 'Dashboard Pages', category: 'Dashboard Pages', count: 4, component: DashboardPage },
-    { name: 'Profile Pages', category: 'Profile Pages', count: 4, component: ProfilePage },
+    { name: 'Landing Page', category: 'Landing Page', count: 5, component: LandingPage },
+    { name: 'About Page', category: 'About Page', count: 8, component: AboutPage },
+    { name: 'Contact Page', category: 'Contact Page', count: 4, component: ContactPage },
+    { name: 'Login Page', category: 'Login Page', count: 4, component: LoginPage },
+    { name: 'Registration Page', category: 'Registration Page', count: 4, component: RegistrationPage },
+    { name: 'Dashboard Page', category: 'Dashboard Page', count: 4, component: DashboardPage },
+    { name: 'Profile Page', category: 'Profile Page', count: 4, component: ProfilePage },
   ];
 
   const layouts = [
-    { name: 'Grid Layouts', category: 'Grid Layouts', count: 10, component: GridLayout },
-    { name: 'Flex Layouts', category: 'Flex Layouts', count: 7, component: FlexLayout },
+    { name: 'Grid Layout', category: 'Grid Layout', count: 10, component: GridLayout },
+    { name: 'Flex Layout', category: 'Flex Layout', count: 7, component: FlexLayout },
     
   ];
 
   const forms = [
-    { name: 'Login Forms', category: 'Login Forms', count: 6, component: LoginForm },
-    { name: 'Registration Forms', category: 'Registration Forms', count: 9, component: RegistrationForm },
-    { name: 'Contact Forms', category: 'Contact Forms', count: 4, component: ContactForm },
-    { name: 'Subscription Forms', category: 'Subscription Forms', count: 4, component: SubscriptionForm },
-    { name: 'Feedback Forms', category: 'Feedback Forms', count: 4, component: FeedbackForm },
-    { name: 'Search Forms', category: 'Search Forms', count: 4, component: SearchForm },
+    { name: 'Login Form', category: 'Login Form', count: 6, component: LoginForm },
+    { name: 'Registration Form', category: 'Registration Form', count: 9, component: RegistrationForm },
+    { name: 'Contact Form', category: 'Contact Form', count: 4, component: ContactForm },
+    { name: 'Subscription Form', category: 'Subscription Form', count: 4, component: SubscriptionForm },
+    { name: 'Feedback Form', category: 'Feedback Form', count: 4, component: FeedbackForm },
+    { name: 'Search Form', category: 'Search Form', count: 4, component: SearchForm },
     
   ];
 
   const uiElements = [
-    { name: 'Buttons', category: 'Buttons', count: 8, component: Button },
-    { name: 'Cards', category: 'Cards', count: 12, component: Card },
-    /*{ name: 'Modals', category: 'Modals', count: 5, component: Modal },
-    { name: 'Tabs', category: 'Tabs', count: 4, component: Tab },
-    { name: 'Accordions', category: 'Accordions', count: 6, component: Accordion },
-    { name: 'Tooltips', category: 'Tooltips', count: 5, component: Tooltip },
-    { name: 'Dropdowns', category: 'Dropdowns', count: 7, component: Dropdown },
-    { name: 'Alerts', category: 'Alerts', count: 4, component: Alert },
-    { name: 'Badges', category: 'Badges', count: 3, component: Badge },*/
+    { name: 'Button', category: 'Button', count: 8, component: Button },
+    { name: 'Card', category: 'Card', count: 12, component: Card },
+    /*{ name: 'Modal', category: 'Modal', count: 5, component: Modal },
+    { name: 'Tab', category: 'Tab', count: 4, component: Tab },
+    { name: 'Accordion', category: 'Accordion', count: 6, component: Accordion },
+    { name: 'Tooltip', category: 'Tooltip', count: 5, component: Tooltip },
+    { name: 'Dropdown', category: 'Dropdown', count: 7, component: Dropdown },
+    { name: 'Alert', category: 'Alert', count: 4, component: Alert },
+    { name: 'Badge', category: 'Badge', count: 3, component: Badge },*/
   ];
 
   const navigation = [
-    { name: 'Navbars', category: 'Navbars', count: 5, component: Navbar },
-    //{ name: 'Sidebars', category: 'Sidebars', count: 5, component: Sidebar },
-    //{ name: 'Menus', category: 'Menus', count: 5, component: Menu },
+    { name: 'Navbar', category: 'Navbar', count: 5, component: Navbar },
+    //{ name: 'Sidebar', category: 'Sidebar', count: 5, component: Sidebar },
+    //{ name: 'Menu', category: 'Menu', count: 5, component: Menu },
   ];
 
   const media = [
-    { name: 'Image Galleries', category: 'Image Galleries', count: 4, component: ImageGallery },
-    //{ name: 'Video Players', category: 'Video Players', count: 3, component: VideoPlayer },
-    //{ name: 'Audio Players', category: 'Audio Players', count: 3, component: AudioPlayer },
-    //{ name: 'Carousels', category: 'Carousels', count: 3, component: Carousel },
+    { name: 'Image Gallery', category: 'Image Gallery', count: 4, component: ImageGallery },
+    /*{ name: 'Video Player', category: 'Video Player', count: 3, component: VideoPlayer },
+    { name: 'Audio Player', category: 'Audio Player', count: 3, component: AudioPlayer },
+    { name: 'Carousel', category: 'Carousel', count: 3, component: Carousel },*/
   ];
 
   const dataDisplay = [
-    { name: 'Charts', category: 'Charts', count: 4, component: Chart },
-    //{ name: 'Graphs', category: 'Graphs', count: 4, component: Graph },
-    //{ name: 'Maps', category: 'Maps', count: 4, component: Map },
+    { name: 'Chart', category: 'Chart', count: 4, component: Chart },
+    //{ name: 'Graph', category: 'Graph', count: 4, component: Graph },
+    //{ name: 'Map', category: 'Map', count: 4, component: Map },
   ];
 
   const utility = [
-    { name: 'Dividers', category: 'Dividers', count: 3, component: Divider },
+    { name: 'Divider', category: 'Divider', count: 3, component: Divider },
   ];
 
   const filteredComponents = (section: { name: string, category: string, count: number, component: React.FC }[]) =>
@@ -186,7 +186,7 @@ const Components: React.FC = () => {
           <h3 className={styles.sectionHeading}>Page Sections</h3>
           <div className={styles.blocksContainer}>
             {filteredComponents(components).map((component, index) => (
-              <Link key={index} to={`/${component.name.toLowerCase().replace(/ /g, '-')}`} className={styles.blockLink}>
+              <Link key={index} to={`/${component.name.toLowerCase().replace(/ /g, '')}`} className={styles.blockLink}>
                 <div className={styles.block}>
                   <div className={styles.blockImage}>Image</div>
                   <div className={styles.blockContent}>
@@ -203,7 +203,7 @@ const Components: React.FC = () => {
           <h3 className={styles.sectionHeading}>Pages</h3>
           <div className={styles.blocksContainer}>
             {filteredComponents(pages).map((page, index) => (
-              <Link key={index} to={`/${page.name.toLowerCase().replace(/ /g, '-')}`} className={styles.blockLink}>
+              <Link key={index} to={`/${page.name.toLowerCase().replace(/ /g, '')}`} className={styles.blockLink}>
                 <div className={styles.block}>
                   <div className={styles.blockImage}>Image</div>
                   <div className={styles.blockContent}>
@@ -220,7 +220,7 @@ const Components: React.FC = () => {
           <h3 className={styles.sectionHeading}>Layouts</h3>
           <div className={styles.blocksContainer}>
             {filteredComponents(layouts).map((layout, index) => (
-              <Link key={index} to={`/${layout.name.toLowerCase().replace(/ /g, '-')}`} className={styles.blockLink}>
+              <Link key={index} to={`/${layout.name.toLowerCase().replace(/ /g, '')}`} className={styles.blockLink}>
                 <div className={styles.block}>
                   <div className={styles.blockImage}>Image</div>
                   <div className={styles.blockContent}>
@@ -237,7 +237,7 @@ const Components: React.FC = () => {
           <h3 className={styles.sectionHeading}>Forms</h3>
           <div className={styles.blocksContainer}>
             {filteredComponents(forms).map((form, index) => (
-              <Link key={index} to={`/${form.name.toLowerCase().replace(/ /g, '-')}`} className={styles.blockLink}>
+              <Link key={index} to={`/${form.name.toLowerCase().replace(/ /g, '')}`} className={styles.blockLink}>
                 <div className={styles.block}>
                   <div className={styles.blockImage}>Image</div>
                   <div className={styles.blockContent}>
@@ -254,7 +254,7 @@ const Components: React.FC = () => {
           <h3 className={styles.sectionHeading}>UI Elements</h3>
           <div className={styles.blocksContainer}>
             {filteredComponents(uiElements).map((element, index) => (
-              <Link key={index} to={`/${element.name.toLowerCase().replace(/ /g, '-')}`} className={styles.blockLink}>
+              <Link key={index} to={`/${element.name.toLowerCase().replace(/ /g, '')}`} className={styles.blockLink}>
                 <div className={styles.block}>
                   <div className={styles.blockImage}>Image</div>
                   <div className={styles.blockContent}>
@@ -271,7 +271,7 @@ const Components: React.FC = () => {
           <h3 className={styles.sectionHeading}>Navigation</h3>
           <div className={styles.blocksContainer}>
             {filteredComponents(navigation).map((nav, index) => (
-              <Link key={index} to={`/${nav.name.toLowerCase().replace(/ /g, '-')}`} className={styles.blockLink}>
+              <Link key={index} to={`/${nav.name.toLowerCase().replace(/ /g, '')}`} className={styles.blockLink}>
                 <div className={styles.block}>
                   <div className={styles.blockImage}>Image</div>
                   <div className={styles.blockContent}>
@@ -288,7 +288,7 @@ const Components: React.FC = () => {
           <h3 className={styles.sectionHeading}>Media</h3>
           <div className={styles.blocksContainer}>
             {filteredComponents(media).map((mediaItem, index) => (
-              <Link key={index} to={`/${mediaItem.name.toLowerCase().replace(/ /g, '-')}`} className={styles.blockLink}>
+              <Link key={index} to={`/${mediaItem.name.toLowerCase().replace(/ /g, '')}`} className={styles.blockLink}>
                 <div className={styles.block}>
                   <div className={styles.blockImage}>Image</div>
                   <div className={styles.blockContent}>
@@ -305,7 +305,7 @@ const Components: React.FC = () => {
           <h3 className={styles.sectionHeading}>Data Display</h3>
           <div className={styles.blocksContainer}>
             {filteredComponents(dataDisplay).map((dataItem, index) => (
-              <Link key={index} to={`/${dataItem.name.toLowerCase().replace(/ /g, '-')}`} className={styles.blockLink}>
+              <Link key={index} to={`/${dataItem.name.toLowerCase().replace(/ /g, '')}`} className={styles.blockLink}>
                 <div className={styles.block}>
                   <div className={styles.blockImage}>Image</div>
                   <div className={styles.blockContent}>
@@ -322,7 +322,7 @@ const Components: React.FC = () => {
           <h3 className={styles.sectionHeading}>Utility Components</h3>
           <div className={styles.blocksContainer}>
             {filteredComponents(utility).map((util, index) => (
-              <Link key={index} to={`/${util.name.toLowerCase().replace(/ /g, '-')}`} className={styles.blockLink}>
+              <Link key={index} to={`/${util.name.toLowerCase().replace(/ /g, '')}`} className={styles.blockLink}>
                 <div className={styles.block}>
                   <div className={styles.blockImage}>Image</div>
                   <div className={styles.blockContent}>

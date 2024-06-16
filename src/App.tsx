@@ -13,6 +13,7 @@ import Login from './pages/Login/Login';
 
 import Footer from './components/Footer/Footer';
 
+import HeroSection from './components/HeroSection/HeroSection';
 
 
 
@@ -32,7 +33,7 @@ const App: React.FC = () => {
           <Route path="/examples" element={<Examples />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
-          
+          <Route path="/herosection" element={<HeroSection />} />
         </Routes>
         <Footer></Footer>
       </Router>
