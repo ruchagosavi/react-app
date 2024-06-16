@@ -1,0 +1,28 @@
+npm init vite@latest ui-toolkit --template react-ts
+cd ui-toolkit
+
+npm install styled-components @types/styled-components react-icons
+npm install react-router-dom @types/react-router-dom
+npm install @mui/material @emotion/react @emotion/styled
+npm install react-icons
+npm install axios
+npm install --save-dev @types/axios
+
+npm install react-responsive-carousel
+
+storybook
+
+npx sb init --builder vite
+
+npm run storybook
+
+
+backend
+
+python --version
+python -m venv venv
+pip install Flask Flask-Cors Flask-Bcrypt Flask-JWT-Extended
+pip freeze > requirements.txt
+python app.py
+npm install axios
+

@@ -1,3 +1,4 @@
+// src/components/Navbar/Navbar.tsx
 import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Navbar.module.css';
@@ -33,6 +34,9 @@ const Navbar: React.FC = () => {
         {isMobileMenuOpen ? <span className={styles.closeIcon}>&times;</span> : <span>&#9776;</span>}
       </button>
       <ul className={`${styles.navLinks} ${isMobileMenuOpen ? styles.open : ''}`}>
+        <li className={styles.closeBtn} onClick={toggleMobileMenu}>
+          &times;
+        </li>
         <li>
           <Link to="/" className={styles.navLink} onClick={toggleMobileMenu}>Home</Link>
         </li>
