@@ -3,14 +3,15 @@ import styles from './CardSection.module.css';
 
 const CardSection: React.FC = () => {
   const [activeCard, setActiveCard] = useState<string | null>(null);
-  const [showCss, setShowCss] = useState<string | null>(null);
+  const [showCss, setShowCss] = useState(false);
 
   const toggleCodeView = (card: string) => {
-    setActiveCard(activeCard === card ? null : card);
-  };
-
-  const toggleCssView = (card: string) => {
-    setShowCss(showCss === card ? null : card);
+    if (activeCard === card) {
+      setShowCss(!showCss);
+    } else {
+      setActiveCard(card);
+      setShowCss(false);
+    }
   };
 
   const copyToClipboard = (text: string) => {
@@ -19,161 +20,131 @@ const CardSection: React.FC = () => {
     });
   };
 
-  const card1Tsx = `
+  const cards = [
+    {
+      title: 'Enjoy $300',
+      text: 'New customers open an eligible checking account with qualifying electronic deposits.',
+      image: 'https://via.placeholder.com/150/FF0000/FFFFFF?text=$300',
+      link: '#'
+    },
+    {
+      title: 'Checking Accounts',
+      text: 'Manage your checking accounts with ease and convenience.',
+      image: 'https://via.placeholder.com/150/0000FF/FFFFFF?text=Checking',
+      link: '#'
+    },
+    {
+      title: 'Credit Cards',
+      text: 'Choose the best credit card for your needs and enjoy rewards.',
+      image: 'https://via.placeholder.com/150/FFFF00/000000?text=Credit+Cards',
+      link: '#'
+    },
+    {
+      title: 'Home Loans',
+      text: 'Get the right home loan for your dream home.',
+      image: 'https://via.placeholder.com/150/00FF00/000000?text=Home+Loans',
+      link: '#'
+    },
+    {
+      title: 'Savings & CDs',
+      text: 'Grow your savings with our competitive rates.',
+      image: 'https://via.placeholder.com/150/FF00FF/FFFFFF?text=Savings+%26+CDs',
+      link: '#'
+    },
+    {
+      title: 'Auto Loans',
+      text: 'Find the perfect auto loan for your new car.',
+      image: 'https://via.placeholder.com/150/00FFFF/000000?text=Auto+Loans',
+      link: '#'
+    },
+    {
+      title: 'Personal Loans',
+      text: 'Get a personal loan for your financial needs.',
+      image: 'https://via.placeholder.com/150/FFAA00/000000?text=Personal+Loans',
+      link: '#'
+    }
+  ];
+
+  const cardTsx = (title: string, text: string, image: string, link: string) => `
 <div className={styles.card}>
-  <h2>Card Title</h2>
-  <p>Card content goes here. This is a sample card.</p>
-  <button>Read More</button>
+  <img src="${image}" alt="${title} image" className={styles.cardImage} />
+  <div className={styles.cardContent}>
+    <h3 className={styles.cardTitle}>${title}</h3>
+    <p className={styles.cardText}>${text}</p>
+    <a href="${link}" className={styles.cardLink}>Go somewhere</a>
+  </div>
 </div>
 `;
 
-  const card1Css = `
+  const cardCss = `
 .card {
   border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 1rem;
-  margin-bottom: 15px;
-}
-
-.card button {
-  background-color: #d71e28; /* Wells Fargo red */
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
   border-radius: 5px;
-  cursor: pointer;
-}
-
-.card button:hover {
-  background-color: #b01c24; /* Darker red */
-}
-`;
-
-  const card2Tsx = `
-<div className={styles.card}>
-  <h2>Another Card</h2>
-  <p>Different content for this card.</p>
-  <button>Learn More</button>
-</div>
-`;
-
-  const card2Css = `
-.card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 1rem;
   background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.cardImage {
+  width: 100%;
+  height: auto;
 }
 
-.card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.cardContent {
+  padding: 1rem;
 }
 
-.card p {
-  font-size: 1rem;
-  margin-bottom: 15px;
+.cardTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
-.card button {
-  background-color: #352b6b; /* Dark purple */
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
+.cardText {
+  margin-bottom: 1rem;
 }
 
-.card button:hover {
-  background-color: #1f1940; /* Darker purple */
+.cardLink {
+  color: #d71e28; /* Wells Fargo red */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cardLink:hover {
+  text-decoration: underline;
 }
 `;
 
   return (
     <div className={styles.cardSection}>
-      {/* Card 1 */}
-      <div className={styles.card}>
-        <h2>Card Title</h2>
-        <p>Card content goes here. This is a sample card.</p>
-        <button>Read More</button>
+      <h2>Card Section</h2>
+      <div className={styles.cardGrid}>
+        {cards.map((card, index) => (
+          <div key={index} className={styles.cardContainer}>
+            <div className={styles.card}>
+              <img src={card.image} alt={`Card ${index + 1} image`} className={styles.cardImage} />
+              <div className={styles.cardContent}>
+                <h3 className={styles.cardTitle}>{card.title}</h3>
+                <p className={styles.cardText}>{card.text}</p>
+                <a href={card.link} className={styles.cardLink}>Go somewhere</a>
+              </div>
+            </div>
+            <div className={styles.toggleContainer}>
+              <button className={`${styles.toggleButton} ${activeCard === `card${index}` && showCss ? styles.active : ''}`} onClick={() => toggleCodeView(`card${index}`)}>
+                {activeCard === `card${index}` && showCss ? 'CSS' : 'TSX'}
+              </button>
+            </div>
+            {activeCard === `card${index}` && (
+              <div className={styles.codeBlock}>
+                <pre>
+                  <code>{showCss ? cardCss : cardTsx(card.title, card.text, card.image, card.link)}</code>
+                </pre>
+                <button onClick={() => copyToClipboard(showCss ? cardCss : cardTsx(card.title, card.text, card.image, card.link))}>Copy {showCss ? 'CSS' : 'TSX'}</button>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
-      <div className={styles.toggleContainer}>
-        <button className={`${styles.toggleButton} ${activeCard === 'card1' ? styles.active : ''}`} onClick={() => toggleCodeView('card1')}>
-          TSX
-        </button>
-        <button className={`${styles.toggleButton} ${showCss === 'card1' ? styles.active : ''}`} onClick={() => toggleCssView('card1')}>
-          CSS
-        </button>
-      </div>
-      {activeCard === 'card1' && (
-        <div className={styles.codeBlock}>
-          <pre>
-            <code>{card1Tsx}</code>
-          </pre>
-          <button onClick={() => copyToClipboard(card1Tsx)}>Copy TSX</button>
-        </div>
-      )}
-      {showCss === 'card1' && (
-        <div className={styles.codeBlock}>
-          <pre>
-            <code>{card1Css}</code>
-          </pre>
-          <button onClick={() => copyToClipboard(card1Css)}>Copy CSS</button>
-        </div>
-      )}
-
-      {/* Card 2 */}
-      <div className={styles.card}>
-        <h2>Another Card</h2>
-        <p>Different content for this card.</p>
-        <button>Learn More</button>
-      </div>
-      <div className={styles.toggleContainer}>
-        <button className={`${styles.toggleButton} ${activeCard === 'card2' ? styles.active : ''}`} onClick={() => toggleCodeView('card2')}>
-          TSX
-        </button>
-        <button className={`${styles.toggleButton} ${showCss === 'card2' ? styles.active : ''}`} onClick={() => toggleCssView('card2')}>
-          CSS
-        </button>
-      </div>
-      {activeCard === 'card2' && (
-        <div className={styles.codeBlock}>
-          <pre>
-            <code>{card2Tsx}</code>
-          </pre>
-          <button onClick={() => copyToClipboard(card2Tsx)}>Copy TSX</button>
-        </div>
-      )}
-      {showCss === 'card2' && (
-        <div className={styles.codeBlock}>
-          <pre>
-            <code>{card2Css}</code>
-          </pre>
-          <button onClick={() => copyToClipboard(card2Css)}>Copy CSS</button>
-        </div>
-      )}
     </div>
   );
 };
