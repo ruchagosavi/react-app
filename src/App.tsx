@@ -15,7 +15,7 @@ import Footer from './components/Footer/Footer';
 
 import HeroSection from './components/HeroSection/HeroSection';
 import Button from './components/Button/Button';
-
+import NavbarSection from './components/NavbarSection/NavbarSection';
 
 
 import { AuthProvider } from './context/AuthContext';
@@ -35,6 +35,7 @@ const App: React.FC = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/herosection" element={<HeroSection />} />
           <Route path="/button" element={<Button/>} />
+          <Route path="/navbarsection" element={<NavbarSection/>} />
         </Routes>
         <Footer></Footer>
       </Router>

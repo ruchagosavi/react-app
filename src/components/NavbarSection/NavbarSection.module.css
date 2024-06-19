@@ -1,0 +1,211 @@
+.navbarSection {
+    margin-bottom: 2rem;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #d71e28; /* Wells Fargo red */
+    border-bottom: 4px solid #ffcd41; /* Yellow border */
+    color: #fff;
+    border-top-left-radius: 10px; /* Rounded top left corner */
+    border-top-right-radius: 10px; /* Rounded top right corner */
+    position: relative;
+  }
+  
+  .navbarSecondary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #352b6b; /* Dark purple */
+    border-bottom: 4px solid #ffcd41; /* Yellow border */
+    color: #fff;
+    border-top-left-radius: 10px; /* Rounded top left corner */
+    border-top-right-radius: 10px; /* Rounded top right corner */
+    position: relative;
+  }
+  
+  .logo a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: inherit;
+  }
+  
+  .navLinks {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .navLink {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+  }
+  
+  .navLink:hover {
+    color: #ffcd41; /* Yellow on hover */
+  }
+  
+  .closeBtn {
+    display: none;
+  }
+  
+  .profileMenuContainer {
+    position: relative;
+  }
+  
+  .userIcon {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  .profileMenu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profileMenu .navLink {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  
+  .profileMenu .navLink:hover {
+    background-color: #f0f0f0;
+  }
+  
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block;
+    }
+  
+    .navLinks {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 250px;
+      background-color: inherit;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in-out;
+      z-index: 1000;
+    }
+  
+    .navLinks.open {
+      transform: translateX(0);
+    }
+  
+    .navLink {
+      padding: 1rem 0;
+      width: 100%;
+      text-align: center;
+      font-size: 1.2rem; /* Responsive font size */
+    }
+  
+    .closeBtn {
+      display: block;
+      font-size: 2rem;
+      color: #ffcd41; /* Yellow color */
+      cursor: pointer;
+      align-self: flex-end;
+      padding: 1rem;
+    }
+  
+    .logo a {
+      font-size: 1.2rem;
+    }
+  }
+  
+  /* Code block styles */
+  .codeBlock {
+    margin: 1rem 0;
+    padding: 1rem;
+    background-color: #000; /* Black background */
+    border-radius: 5px;
+    overflow: auto;
+  }
+  
+  .codeBlock pre {
+    margin: 0;
+    white-space: pre-wrap;
+    color: #fff; /* White text */
+  }
+  
+  .codeBlock button {
+    margin-top: 0.5rem;
+    background-color: #d71e28; /* Wells Fargo red */
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .codeBlock button:hover {
+    background-color: #b01c24; /* Darker red */
+  }
+  
+  .toggleContainer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .toggleButton {
+    background-color: #ddd; /* Light grey */
+    color: #000;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    position: relative;
+    width: 50px;
+    height: 25px;
+    outline: none;
+    transition: background-color 0.3s;
+  }
+  
+  .toggleButton::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 21px;
+    height: 21px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: transform 0.3s;
+  }
+  
+  .toggleButton.active {
+    background-color: #007bff; /* Blue */
+  }
+  
+  .toggleButton.active::before {
+    transform: translateX(25px);
+  }
+  

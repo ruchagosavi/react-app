@@ -1,0 +1,261 @@
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FaBars, FaTimes, FaUserCircle } from 'react-icons/fa';
+import styles from './NavbarSection.module.css';
+
+const NavbarSection: React.FC = () => {
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isProfileMenuOpen, setProfileMenuOpen] = useState(false); // State for profile menu
+  const [activeNavbar, setActiveNavbar] = useState<string | null>(null);
+  const [showCss, setShowCss] = useState<string | null>(null);
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const toggleProfileMenu = () => {
+    setProfileMenuOpen(!isProfileMenuOpen);
+  };
+
+  const handleLogout = () => {
+    // Add your logout logic here
+  };
+
+  const toggleCodeView = (navbar: string) => {
+    setActiveNavbar(activeNavbar === navbar ? null : navbar);
+  };
+
+  const toggleCssView = (navbar: string) => {
+    setShowCss(showCss === navbar ? null : navbar);
+  };
+
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Code copied to clipboard');
+    });
+  };
+
+  const navbar1Tsx = `
+<nav className={styles.navbar}>
+  <div className={styles.logo}>
+    <Link to="/">
+      <img src="https://www17.wellsfargomedia.com/assets/images/rwd/wf_logo_220x23.png" alt="Wells Fargo Logo" className={styles.logoImage} />
+    </Link>
+  </div>
+  <button className={styles.hamburger} onClick={toggleMobileMenu}>
+    {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+  </button>
+  <ul className={\`\${styles.navLinks} \${isMobileMenuOpen ? styles.open : ''}\`}>
+    <li className={styles.closeBtn} onClick={toggleMobileMenu}>
+      &times;
+    </li>
+    <li>
+      <Link to="/" className={styles.navLink} onClick={toggleMobileMenu}>Home</Link>
+    </li>
+    <li>
+      <Link to="/services" className={styles.navLink} onClick={toggleMobileMenu}>Services</Link>
+    </li>
+    <li>
+      <Link to="/about" className={styles.navLink} onClick={toggleMobileMenu}>About</Link>
+    </li>
+    <li>
+      <Link to="/contact" className={styles.navLink} onClick={toggleMobileMenu}>Contact</Link>
+    </li>
+    <li className={styles.userActions}>
+      <FaUserCircle className={styles.userIcon} onClick={toggleProfileMenu} />
+      {isProfileMenuOpen && (
+        <div className={styles.profileMenu}>
+          <Link to="/profile" className={styles.navLink} onClick={toggleProfileMenu}>Profile</Link>
+          <button className={styles.navLink} onClick={handleLogout}>Logout</button>
+        </div>
+      )}
+    </li>
+  </ul>
+</nav>
+`;
+
+  const navbar1Css = `
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #d71e28; /* Wells Fargo red */
+  border-bottom: 4px solid #ffcd41; /* Yellow border */
+  color: #fff;
+  border-top-left-radius: 10px; /* Rounded top left corner */
+  border-top-right-radius: 10px; /* Rounded top right corner */
+  position: relative;
+}
+
+/* Other styles are the same as .navbar */
+`;
+
+  const navbar2Tsx = `
+<nav className={styles.navbar}>
+  <div className={styles.logo}>
+    <Link to="/">
+      <img src="https://www17.wellsfargomedia.com/assets/images/rwd/wf_logo_220x23.png" alt="Wells Fargo Logo" className={styles.logoImage} />
+    </Link>
+  </div>
+  <button className={styles.hamburger} onClick={toggleMobileMenu}>
+    {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+  </button>
+  <ul className={\`\${styles.navLinks} \${isMobileMenuOpen ? styles.open : ''}\`}>
+    <li className={styles.closeBtn} onClick={toggleMobileMenu}>
+      &times;
+    </li>
+    <li>
+      <Link to="/" className={styles.navLink} onClick={toggleMobileMenu}>Home</Link>
+    </li>
+    <li>
+      <Link to="/features" className={styles.navLink} onClick={toggleMobileMenu}>Features</Link>
+    </li>
+    <li>
+      <Link to="/pricing" className={styles.navLink} onClick={toggleMobileMenu}>Pricing</Link>
+    </li>
+    <li>
+      <Link to="/faq" className={styles.navLink} onClick={toggleMobileMenu}>FAQ</Link>
+    </li>
+  </ul>
+</nav>
+`;
+
+  const navbar2Css = `
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #352b6b; /* Dark purple */
+  border-bottom: 4px solid #ffcd41; /* Yellow border */
+  color: #fff;
+  border-top-left-radius: 10px; /* Rounded top left corner */
+  border-top-right-radius: 10px; /* Rounded top right corner */
+  position: relative;
+}
+
+/* Other styles are the same as .navbar */
+`;
+
+  return (
+    <div className={styles.navbarSection}>
+      {/* Navbar 1 */}
+      <nav className={styles.navbar}>
+        <div className={styles.logo}>
+          <Link to="/">
+            <img src="https://www17.wellsfargomedia.com/assets/images/rwd/wf_logo_220x23.png" alt="Wells Fargo Logo" className={styles.logoImage} />
+          </Link>
+        </div>
+        <button className={styles.hamburger} onClick={toggleMobileMenu}>
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+        <ul className={`${styles.navLinks} ${isMobileMenuOpen ? styles.open : ''}`}>
+          <li className={styles.closeBtn} onClick={toggleMobileMenu}>
+            &times;
+          </li>
+          <li>
+            <Link to="/" className={styles.navLink} onClick={toggleMobileMenu}>Home</Link>
+          </li>
+          <li>
+            <Link to="/services" className={styles.navLink} onClick={toggleMobileMenu}>Services</Link>
+          </li>
+          <li>
+            <Link to="/about" className={styles.navLink} onClick={toggleMobileMenu}>About</Link>
+          </li>
+          <li>
+            <Link to="/contact" className={styles.navLink} onClick={toggleMobileMenu}>Contact</Link>
+          </li>
+          <li className={styles.userActions}>
+            <FaUserCircle className={styles.userIcon} onClick={toggleProfileMenu} />
+            {isProfileMenuOpen && (
+              <div className={styles.profileMenu}>
+                <Link to="/profile" className={styles.navLink} onClick={toggleProfileMenu}>Profile</Link>
+                <button className={styles.navLink} onClick={handleLogout}>Logout</button>
+              </div>
+            )}
+          </li>
+        </ul>
+      </nav>
+      <div className={styles.toggleContainer}>
+        <button className={`${styles.toggleButton} ${activeNavbar === 'navbar1' ? styles.active : ''}`} onClick={() => toggleCodeView('navbar1')}>
+          TSX
+        </button>
+        <button className={`${styles.toggleButton} ${showCss === 'navbar1' ? styles.active : ''}`} onClick={() => toggleCssView('navbar1')}>
+          CSS
+        </button>
+      </div>
+      {activeNavbar === 'navbar1' && (
+        <div className={styles.codeBlock}>
+          <pre>
+            <code>{navbar1Tsx}</code>
+          </pre>
+          <button onClick={() => copyToClipboard(navbar1Tsx)}>Copy TSX</button>
+        </div>
+      )}
+      {showCss === 'navbar1' && (
+        <div className={styles.codeBlock}>
+          <pre>
+            <code>{navbar1Css}</code>
+          </pre>
+          <button onClick={() => copyToClipboard(navbar1Css)}>Copy CSS</button>
+        </div>
+      )}
+
+      {/* Navbar 2 */}
+      <nav className={styles.navbar}>
+        <div className={styles.logo}>
+          <Link to="/">
+            <img src="https://www17.wellsfargomedia.com/assets/images/rwd/wf_logo_220x23.png" alt="Wells Fargo Logo" className={styles.logoImage} />
+          </Link>
+        </div>
+        <button className={styles.hamburger} onClick={toggleMobileMenu}>
+          {isMobileMenuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+        <ul className={`${styles.navLinks} ${isMobileMenuOpen ? styles.open : ''}`}>
+          <li className={styles.closeBtn} onClick={toggleMobileMenu}>
+            &times;
+          </li>
+          <li>
+            <Link to="/" className={styles.navLink} onClick={toggleMobileMenu}>Home</Link>
+          </li>
+          <li>
+            <Link to="/features" className={styles.navLink} onClick={toggleMobileMenu}>Features</Link>
+          </li>
+          <li>
+            <Link to="/pricing" className={styles.navLink} onClick={toggleMobileMenu}>Pricing</Link>
+          </li>
+          <li>
+            <Link to="/faq" className={styles.navLink} onClick={toggleMobileMenu}>FAQ</Link>
+          </li>
+        </ul>
+      </nav>
+      <div className={styles.toggleContainer}>
+        <button className={`${styles.toggleButton} ${activeNavbar === 'navbar2' ? styles.active : ''}`} onClick={() => toggleCodeView('navbar2')}>
+          TSX
+        </button>
+        <button className={`${styles.toggleButton} ${showCss === 'navbar2' ? styles.active : ''}`} onClick={() => toggleCssView('navbar2')}>
+          CSS
+        </button>
+      </div>
+      {activeNavbar === 'navbar2' && (
+        <div className={styles.codeBlock}>
+          <pre>
+            <code>{navbar2Tsx}</code>
+          </pre>
+          <button onClick={() => copyToClipboard(navbar2Tsx)}>Copy TSX</button>
+        </div>
+      )}
+      {showCss === 'navbar2' && (
+        <div className={styles.codeBlock}>
+          <pre>
+            <code>{navbar2Css}</code>
+          </pre>
+          <button onClick={() => copyToClipboard(navbar2Css)}>Copy CSS</button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default NavbarSection;

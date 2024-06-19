@@ -59,7 +59,7 @@ import Badge from '../../components/Badge/Badge';*/
 // import Icon from '../../components/Icon/Icon';
 
 // Importing Navigation
-import Navbar from '../../components/Navbar/Navbar';
+import NavbarSection from '../../components/NavbarSection/NavbarSection';
 //import Sidebar from '../../components/Sidebar/Sidebar';
 //import Menu from '../../components/Menu/Menu';
 
@@ -136,7 +136,7 @@ const Components: React.FC = () => {
   ];
 
   const navigation = [
-    { name: 'Navbar', category: 'Navbar', count: 5, component: Navbar },
+    { name: 'Navbar Section', category: 'Navbar Section', count: 5, component: NavbarSection },
     //{ name: 'Sidebar', category: 'Sidebar', count: 5, component: Sidebar },
     //{ name: 'Menu', category: 'Menu', count: 5, component: Menu },
   ];
