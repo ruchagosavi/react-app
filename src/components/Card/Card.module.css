@@ -1,43 +1,80 @@
 .cardSection {
   margin-bottom: 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+}
+
+.cardGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cardContainer {
+  width: calc(33.333% - 1rem);
 }
 
 .card {
   border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  background-color: #fff;
+  border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background-color: #fff;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.cardImage {
+  width: 100%;
+  height: auto;
 }
 
-.card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.cardContent {
+  padding: 1rem;
 }
 
-.card p {
-  font-size: 1rem;
-  margin-bottom: 15px;
+.cardTitle {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 
-.card button {
+.cardText {
+  margin-bottom: 1rem;
+}
+
+.cardLink {
+  color: #d71e28; /* Wells Fargo red */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cardLink:hover {
+  text-decoration: underline;
+}
+
+/* Code block styles */
+.codeBlock {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #000; /* Black background */
+  border-radius: 5px;
+  overflow: auto;
+}
+
+.codeBlock pre {
+  margin: 0;
+  white-space: pre-wrap;
+  color: #fff; /* White text */
+}
+
+.codeBlock button {
+  margin-top: 0.5rem;
   background-color: #d71e28; /* Wells Fargo red */
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.card button:hover {
+.codeBlock button:hover {
   background-color: #b01c24; /* Darker red */
 }
 
@@ -80,32 +117,4 @@
 
 .toggleButton.active::before {
   transform: translateX(25px);
-}
-
-.codeBlock {
-  margin: 1rem 0;
-  padding: 1rem;
-  background-color: #000; /* Black background */
-  border-radius: 5px;
-  overflow: auto;
-}
-
-.codeBlock pre {
-  margin: 0;
-  white-space: pre-wrap;
-  color: #fff; /* White text */
-}
-
-.codeBlock button {
-  margin-top: 0.5rem;
-  background-color: #d71e28; /* Wells Fargo red */
-  color: #fff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.codeBlock button:hover {
-  background-color: #b01c24; /* Darker red */
 }
