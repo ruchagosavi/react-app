@@ -1,39 +1,16 @@
-import React, { useState } from 'react';
-import styles from './CardSection.module.css';
+.cardSection {
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
 
-const CardSection: React.FC = () => {
-  const [activeCard, setActiveCard] = useState<string | null>(null);
-  const [showCss, setShowCss] = useState<string | null>(null);
-
-  const toggleCodeView = (card: string) => {
-    setActiveCard(activeCard === card ? null : card);
-  };
-
-  const toggleCssView = (card: string) => {
-    setShowCss(showCss === card ? null : card);
-  };
-
-  const copyToClipboard = (text: string) => {
-    navigator.clipboard.writeText(text).then(() => {
-      alert('Code copied to clipboard');
-    });
-  };
-
-  const card1Tsx = `
-<div className={styles.card}>
-  <h2>Card Title</h2>
-  <p>Card content goes here. This is a sample card.</p>
-  <button>Read More</button>
-</div>
-`;
-
-  const card1Css = `
 .card {
   border: 1px solid #ddd;
   border-radius: 10px;
   padding: 20px;
   background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
 
@@ -63,119 +40,72 @@ const CardSection: React.FC = () => {
 .card button:hover {
   background-color: #b01c24; /* Darker red */
 }
-`;
 
-  const card2Tsx = `
-<div className={styles.card}>
-  <h2>Another Card</h2>
-  <p>Different content for this card.</p>
-  <button>Learn More</button>
-</div>
-`;
+.toggleContainer {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
 
-  const card2Css = `
-.card {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
+.toggleButton {
+  background-color: #ddd; /* Light grey */
+  color: #000;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  position: relative;
+  width: 50px;
+  height: 25px;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+.toggleButton::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
   background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: transform 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.toggleButton.active {
+  background-color: #007bff; /* Blue */
 }
 
-.card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+.toggleButton.active::before {
+  transform: translateX(25px);
 }
 
-.card p {
-  font-size: 1rem;
-  margin-bottom: 15px;
+.codeBlock {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #000; /* Black background */
+  border-radius: 5px;
+  overflow: auto;
 }
 
-.card button {
-  background-color: #352b6b; /* Dark purple */
+.codeBlock pre {
+  margin: 0;
+  white-space: pre-wrap;
+  color: #fff; /* White text */
+}
+
+.codeBlock button {
+  margin-top: 0.5rem;
+  background-color: #d71e28; /* Wells Fargo red */
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
 }
 
-.card button:hover {
-  background-color: #1f1940; /* Darker purple */
+.codeBlock button:hover {
+  background-color: #b01c24; /* Darker red */
 }
-`;
-
-  return (
-    <div className={styles.cardSection}>
-      {/* Card 1 */}
-      <div className={styles.card}>
-        <h2>Card Title</h2>
-        <p>Card content goes here. This is a sample card.</p>
-        <button>Read More</button>
-      </div>
-      <div className={styles.toggleContainer}>
-        <button className={`${styles.toggleButton} ${activeCard === 'card1' ? styles.active : ''}`} onClick={() => toggleCodeView('card1')}>
-          TSX
-        </button>
-        <button className={`${styles.toggleButton} ${showCss === 'card1' ? styles.active : ''}`} onClick={() => toggleCssView('card1')}>
-          CSS
-        </button>
-      </div>
-      {activeCard === 'card1' && (
-        <div className={styles.codeBlock}>
-          <pre>
-            <code>{card1Tsx}</code>
-          </pre>
-          <button onClick={() => copyToClipboard(card1Tsx)}>Copy TSX</button>
-        </div>
-      )}
-      {showCss === 'card1' && (
-        <div className={styles.codeBlock}>
-          <pre>
-            <code>{card1Css}</code>
-          </pre>
-          <button onClick={() => copyToClipboard(card1Css)}>Copy CSS</button>
-        </div>
-      )}
-
-      {/* Card 2 */}
-      <div className={styles.card}>
-        <h2>Another Card</h2>
-        <p>Different content for this card.</p>
-        <button>Learn More</button>
-      </div>
-      <div className={styles.toggleContainer}>
-        <button className={`${styles.toggleButton} ${activeCard === 'card2' ? styles.active : ''}`} onClick={() => toggleCodeView('card2')}>
-          TSX
-        </button>
-        <button className={`${styles.toggleButton} ${showCss === 'card2' ? styles.active : ''}`} onClick={() => toggleCssView('card2')}>
-          CSS
-        </button>
-      </div>
-      {activeCard === 'card2' && (
-        <div className={styles.codeBlock}>
-          <pre>
-            <code>{card2Tsx}</code>
-          </pre>
-          <button onClick={() => copyToClipboard(card2Tsx)}>Copy TSX</button>
-        </div>
-      )}
-      {showCss === 'card2' && (
-        <div className={styles.codeBlock}>
-          <pre>
-            <code>{card2Css}</code>
-          </pre>
-          <button onClick={() => copyToClipboard(card2Css)}>Copy CSS</button>
-        </div>
-      )}
-    </div>
-  );
-};
-
-export default CardSection;
