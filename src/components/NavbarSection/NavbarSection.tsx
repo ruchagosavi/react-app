@@ -7,7 +7,6 @@ const NavbarSection: React.FC = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isProfileMenuOpen, setProfileMenuOpen] = useState(false); // State for profile menu
   const [activeNavbar, setActiveNavbar] = useState<string | null>(null);
-  const [showCss, setShowCss] = useState<string | null>(null);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
@@ -23,10 +22,6 @@ const NavbarSection: React.FC = () => {
 
   const toggleCodeView = (navbar: string) => {
     setActiveNavbar(activeNavbar === navbar ? null : navbar);
-  };
-
-  const toggleCssView = (navbar: string) => {
-    setShowCss(showCss === navbar ? null : navbar);
   };
 
   const copyToClipboard = (text: string) => {
@@ -75,6 +70,10 @@ const NavbarSection: React.FC = () => {
 `;
 
   const navbar1Css = `
+.navbarSection {
+  margin-bottom: 2rem;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -88,11 +87,120 @@ const NavbarSection: React.FC = () => {
   position: relative;
 }
 
-/* Other styles are the same as .navbar */
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navLink {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+.navLink:hover {
+  color: #ffcd41; /* Yellow on hover */
+}
+
+.closeBtn {
+  display: none;
+}
+
+.profileMenuContainer {
+  position: relative;
+}
+
+.userIcon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.profileMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileMenu .navLink {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.profileMenu .navLink:hover {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: inherit;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .navLinks.open {
+    transform: translateX(0);
+  }
+
+  .navLink {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem; /* Responsive font size */
+  }
+
+  .closeBtn {
+    display: block;
+    font-size: 2rem;
+    color: #ffcd41; /* Yellow color */
+    cursor: pointer;
+    align-self: flex-end;
+    padding: 1rem;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+  }
+}
 `;
 
   const navbar2Tsx = `
-<nav className={styles.navbar}>
+<nav className={styles.navbarSecondary}>
   <div className={styles.logo}>
     <Link to="/">
       <img src="https://www17.wellsfargomedia.com/assets/images/rwd/wf_logo_220x23.png" alt="Wells Fargo Logo" className={styles.logoImage} />
@@ -122,12 +230,12 @@ const NavbarSection: React.FC = () => {
 `;
 
   const navbar2Css = `
-.navbar {
+.navbarSecondary {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #352b6b; /* Dark purple */
+  background-color: #d71e28; /* Wells Fargo red */
   border-bottom: 4px solid #ffcd41; /* Yellow border */
   color: #fff;
   border-top-left-radius: 10px; /* Rounded top left corner */
@@ -135,12 +243,122 @@ const NavbarSection: React.FC = () => {
   position: relative;
 }
 
-/* Other styles are the same as .navbar */
+.logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navLink {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+
+.navLink:hover {
+  color: #ffcd41; /* Yellow on hover */
+}
+
+.closeBtn {
+  display: none;
+}
+
+.profileMenuContainer {
+  position: relative;
+}
+
+.userIcon {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.profileMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.profileMenu .navLink {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.profileMenu .navLink:hover {
+  background-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 250px;
+    background-color: inherit;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .navLinks.open {
+    transform: translateX(0);
+  }
+
+  .navLink {
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem; /* Responsive font size */
+  }
+
+  .closeBtn {
+    display: block;
+    font-size: 2rem;
+    color: #ffcd41; /* Yellow color */
+    cursor: pointer;
+    align-self: flex-end;
+    padding: 1rem;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+  }
+}
 `;
 
   return (
     <div className={styles.navbarSection}>
       {/* Navbar 1 */}
+      <h2>Navbar 1</h2>
       <nav className={styles.navbar}>
         <div className={styles.logo}>
           <Link to="/">
@@ -178,11 +396,8 @@ const NavbarSection: React.FC = () => {
         </ul>
       </nav>
       <div className={styles.toggleContainer}>
-        <button className={`${styles.toggleButton} ${activeNavbar === 'navbar1' ? styles.active : ''}`} onClick={() => toggleCodeView('navbar1')}>
-          TSX
-        </button>
-        <button className={`${styles.toggleButton} ${showCss === 'navbar1' ? styles.active : ''}`} onClick={() => toggleCssView('navbar1')}>
-          CSS
+        <button className={styles.toggleButton} onClick={() => toggleCodeView('navbar1')}>
+          {activeNavbar === 'navbar1' ? 'CSS' : 'TSX'}
         </button>
       </div>
       {activeNavbar === 'navbar1' && (
@@ -193,7 +408,7 @@ const NavbarSection: React.FC = () => {
           <button onClick={() => copyToClipboard(navbar1Tsx)}>Copy TSX</button>
         </div>
       )}
-      {showCss === 'navbar1' && (
+      {activeNavbar === 'navbar1Css' && (
         <div className={styles.codeBlock}>
           <pre>
             <code>{navbar1Css}</code>
@@ -202,8 +417,12 @@ const NavbarSection: React.FC = () => {
         </div>
       )}
 
+      {/* Spacing between navbars */}
+      <div style={{ marginBottom: '2rem' }}></div>
+
       {/* Navbar 2 */}
-      <nav className={styles.navbar}>
+      <h2>Navbar 2</h2>
+      <nav className={styles.navbarSecondary}>
         <div className={styles.logo}>
           <Link to="/">
             <img src="https://www17.wellsfargomedia.com/assets/images/rwd/wf_logo_220x23.png" alt="Wells Fargo Logo" className={styles.logoImage} />
@@ -231,11 +450,8 @@ const NavbarSection: React.FC = () => {
         </ul>
       </nav>
       <div className={styles.toggleContainer}>
-        <button className={`${styles.toggleButton} ${activeNavbar === 'navbar2' ? styles.active : ''}`} onClick={() => toggleCodeView('navbar2')}>
-          TSX
-        </button>
-        <button className={`${styles.toggleButton} ${showCss === 'navbar2' ? styles.active : ''}`} onClick={() => toggleCssView('navbar2')}>
-          CSS
+        <button className={styles.toggleButton} onClick={() => toggleCodeView('navbar2')}>
+          {activeNavbar === 'navbar2' ? 'CSS' : 'TSX'}
         </button>
       </div>
       {activeNavbar === 'navbar2' && (
@@ -246,7 +462,7 @@ const NavbarSection: React.FC = () => {
           <button onClick={() => copyToClipboard(navbar2Tsx)}>Copy TSX</button>
         </div>
       )}
-      {showCss === 'navbar2' && (
+      {activeNavbar === 'navbar2Css' && (
         <div className={styles.codeBlock}>
           <pre>
             <code>{navbar2Css}</code>
@@ -259,3 +475,4 @@ const NavbarSection: React.FC = () => {
 };
 
 export default NavbarSection;
+          
