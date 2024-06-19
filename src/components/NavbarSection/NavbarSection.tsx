@@ -5,8 +5,9 @@ import styles from './NavbarSection.module.css';
 
 const NavbarSection: React.FC = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [isProfileMenuOpen, setProfileMenuOpen] = useState(false); // State for profile menu
+  const [isProfileMenuOpen, setProfileMenuOpen] = useState(false);
   const [activeNavbar, setActiveNavbar] = useState<string | null>(null);
+  const [showCss, setShowCss] = useState(false);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!isMobileMenuOpen);
@@ -21,7 +22,12 @@ const NavbarSection: React.FC = () => {
   };
 
   const toggleCodeView = (navbar: string) => {
-    setActiveNavbar(activeNavbar === navbar ? null : navbar);
+    if (activeNavbar === navbar) {
+      setShowCss(!showCss);
+    } else {
+      setActiveNavbar(navbar);
+      setShowCss(false);
+    }
   };
 
   const copyToClipboard = (text: string) => {
@@ -200,7 +206,7 @@ const NavbarSection: React.FC = () => {
 `;
 
   const navbar2Tsx = `
-<nav className={styles.navbarSecondary}>
+<nav className={styles.navbar}>
   <div className={styles.logo}>
     <Link to="/">
       <img src="https://www17.wellsfargomedia.com/assets/images/rwd/wf_logo_220x23.png" alt="Wells Fargo Logo" className={styles.logoImage} />
@@ -230,7 +236,11 @@ const NavbarSection: React.FC = () => {
 `;
 
   const navbar2Css = `
-.navbarSecondary {
+.navbarSection {
+  margin-bottom: 2rem;
+}
+
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -396,24 +406,16 @@ const NavbarSection: React.FC = () => {
         </ul>
       </nav>
       <div className={styles.toggleContainer}>
-        <button className={styles.toggleButton} onClick={() => toggleCodeView('navbar1')}>
-          {activeNavbar === 'navbar1' ? 'CSS' : 'TSX'}
+        <button className={`${styles.toggleButton} ${activeNavbar === 'navbar1' && showCss ? styles.active : ''}`} onClick={() => toggleCodeView('navbar1')}>
+          {activeNavbar === 'navbar1' && showCss ? 'CSS' : 'TSX'}
         </button>
       </div>
       {activeNavbar === 'navbar1' && (
         <div className={styles.codeBlock}>
           <pre>
-            <code>{navbar1Tsx}</code>
+            <code>{showCss ? navbar1Css : navbar1Tsx}</code>
           </pre>
-          <button onClick={() => copyToClipboard(navbar1Tsx)}>Copy TSX</button>
-        </div>
-      )}
-      {activeNavbar === 'navbar1Css' && (
-        <div className={styles.codeBlock}>
-          <pre>
-            <code>{navbar1Css}</code>
-          </pre>
-          <button onClick={() => copyToClipboard(navbar1Css)}>Copy CSS</button>
+          <button onClick={() => copyToClipboard(showCss ? navbar1Css : navbar1Tsx)}>Copy {showCss ? 'CSS' : 'TSX'}</button>
         </div>
       )}
 
@@ -422,7 +424,7 @@ const NavbarSection: React.FC = () => {
 
       {/* Navbar 2 */}
       <h2>Navbar 2</h2>
-      <nav className={styles.navbarSecondary}>
+      <nav className={styles.navbar}>
         <div className={styles.logo}>
           <Link to="/">
             <img src="https://www17.wellsfargomedia.com/assets/images/rwd/wf_logo_220x23.png" alt="Wells Fargo Logo" className={styles.logoImage} />
@@ -450,24 +452,16 @@ const NavbarSection: React.FC = () => {
         </ul>
       </nav>
       <div className={styles.toggleContainer}>
-        <button className={styles.toggleButton} onClick={() => toggleCodeView('navbar2')}>
-          {activeNavbar === 'navbar2' ? 'CSS' : 'TSX'}
+        <button className={`${styles.toggleButton} ${activeNavbar === 'navbar2' && showCss ? styles.active : ''}`} onClick={() => toggleCodeView('navbar2')}>
+          {activeNavbar === 'navbar2' && showCss ? 'CSS' : 'TSX'}
         </button>
       </div>
       {activeNavbar === 'navbar2' && (
         <div className={styles.codeBlock}>
           <pre>
-            <code>{navbar2Tsx}</code>
+            <code>{showCss ? navbar2Css : navbar2Tsx}</code>
           </pre>
-          <button onClick={() => copyToClipboard(navbar2Tsx)}>Copy TSX</button>
-        </div>
-      )}
-      {activeNavbar === 'navbar2Css' && (
-        <div className={styles.codeBlock}>
-          <pre>
-            <code>{navbar2Css}</code>
-          </pre>
-          <button onClick={() => copyToClipboard(navbar2Css)}>Copy CSS</button>
+          <button onClick={() => copyToClipboard(showCss ? navbar2Css : navbar2Tsx)}>Copy {showCss ? 'CSS' : 'TSX'}</button>
         </div>
       )}
     </div>
@@ -475,4 +469,3 @@ const NavbarSection: React.FC = () => {
 };
 
 export default NavbarSection;
-          
