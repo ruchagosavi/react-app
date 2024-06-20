@@ -154,7 +154,35 @@ const CardSection: React.FC = () => {
       <div className={styles.cardGrid}>
         {cards.map((card, index) => (
           <div key={index} className={styles.cardContainer}>
-            <div className={styles.card} dangerouslySetInnerHTML={{ __html: cardTsx(card) }}></div>
+            {card.type === 'imageCard' && (
+              <div className={styles.card}>
+                <img src={card.image} alt={`${card.title} image`} className={styles.cardImage} />
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <p className={styles.cardText}>{card.text}</p>
+                  <a href={card.link} className={styles.cardLink}>Go somewhere</a>
+                </div>
+              </div>
+            )}
+            {card.type === 'titleCard' && (
+              <div className={styles.card}>
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <p className={styles.cardText}>{card.text}</p>
+                  <a href={card.link} className={styles.cardLink}>Go somewhere</a>
+                </div>
+              </div>
+            )}
+            {card.type === 'testimonialCard' && (
+              <div className={styles.card}>
+                <div className={styles.cardContent}>
+                  <h3 className={styles.cardTitle}>{card.title}</h3>
+                  <p className={styles.cardText}>{card.text}</p>
+                  <blockquote className={styles.testimonial}>"{card.testimonial}"</blockquote>
+                  <a href={card.link} className={styles.cardLink}>Go somewhere</a>
+                </div>
+              </div>
+            )}
             <div className={styles.toggleContainer}>
               <button className={`${styles.toggleButton} ${showCss[index] ? styles.active : ''}`} onClick={() => toggleCodeView(index)}>
                 {showCss[index] ? 'CSS' : 'TSX'}
