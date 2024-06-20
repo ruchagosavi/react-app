@@ -10,6 +10,7 @@
 
 .cardContainer {
   width: calc(33.333% - 1rem);
+  position: relative;
 }
 
 .card {
@@ -88,6 +89,9 @@
   display: flex;
   gap: 1rem;
   margin-top: 1rem;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
 }
 
 .toggleButton {
