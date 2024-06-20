@@ -49,6 +49,12 @@
   text-decoration: underline;
 }
 
+.testimonial {
+  font-style: italic;
+  color: #555;
+  margin: 1rem 0;
+}
+
 /* Code block styles */
 .codeBlock {
   margin: 1rem 0;
