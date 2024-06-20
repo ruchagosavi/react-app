@@ -196,12 +196,14 @@ const CardSection: React.FC = () => {
                 {showCss[index] ? 'CSS' : 'TSX'}
               </button>
             </div>
-            <div className={styles.codeBlock}>
-              <pre>
-                <code>{showCss[index] ? cardCss : cardTsxString(card)}</code>
-              </pre>
-              <button onClick={() => copyToClipboard(showCss[index] ? cardCss : cardTsxString(card))}>Copy {showCss[index] ? 'CSS' : 'TSX'}</button>
-            </div>
+            {showCss[index] && (
+              <div className={styles.codeBlock}>
+                <pre>
+                  <code>{showCss[index] ? cardCss : cardTsxString(card)}</code>
+                </pre>
+                <button onClick={() => copyToClipboard(showCss[index] ? cardCss : cardTsxString(card))}>Copy {showCss[index] ? 'CSS' : 'TSX'}</button>
+              </div>
+            )}
           </div>
         ))}
       </div>
