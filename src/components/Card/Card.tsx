@@ -67,7 +67,43 @@ const CardSection: React.FC = () => {
     }
   ];
 
-  const cardTsx = (card: any) => {
+  const cardJsx = (card: any) => {
+    if (card.type === 'imageCard') {
+      return (
+        <div className={styles.card}>
+          <img src={card.image} alt={`${card.title} image`} className={styles.cardImage} />
+          <div className={styles.cardContent}>
+            <h3 className={styles.cardTitle}>{card.title}</h3>
+            <p className={styles.cardText}>{card.text}</p>
+            <a href={card.link} className={styles.cardLink}>Go somewhere</a>
+          </div>
+        </div>
+      );
+    } else if (card.type === 'titleCard') {
+      return (
+        <div className={styles.card}>
+          <div className={styles.cardContent}>
+            <h3 className={styles.cardTitle}>{card.title}</h3>
+            <p className={styles.cardText}>{card.text}</p>
+            <a href={card.link} className={styles.cardLink}>Go somewhere</a>
+          </div>
+        </div>
+      );
+    } else if (card.type === 'testimonialCard') {
+      return (
+        <div className={styles.card}>
+          <div className={styles.cardContent}>
+            <h3 className={styles.cardTitle}>{card.title}</h3>
+            <p className={styles.cardText}>{card.text}</p>
+            <blockquote className={styles.testimonial}>"{card.testimonial}"</blockquote>
+            <a href={card.link} className={styles.cardLink}>Go somewhere</a>
+          </div>
+        </div>
+      );
+    }
+  };
+
+  const cardTsxString = (card: any) => {
     if (card.type === 'imageCard') {
       return `
 <div className={styles.card}>
@@ -154,35 +190,7 @@ const CardSection: React.FC = () => {
       <div className={styles.cardGrid}>
         {cards.map((card, index) => (
           <div key={index} className={styles.cardContainer}>
-            {card.type === 'imageCard' && (
-              <div className={styles.card}>
-                <img src={card.image} alt={`${card.title} image`} className={styles.cardImage} />
-                <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>{card.title}</h3>
-                  <p className={styles.cardText}>{card.text}</p>
-                  <a href={card.link} className={styles.cardLink}>Go somewhere</a>
-                </div>
-              </div>
-            )}
-            {card.type === 'titleCard' && (
-              <div className={styles.card}>
-                <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>{card.title}</h3>
-                  <p className={styles.cardText}>{card.text}</p>
-                  <a href={card.link} className={styles.cardLink}>Go somewhere</a>
-                </div>
-              </div>
-            )}
-            {card.type === 'testimonialCard' && (
-              <div className={styles.card}>
-                <div className={styles.cardContent}>
-                  <h3 className={styles.cardTitle}>{card.title}</h3>
-                  <p className={styles.cardText}>{card.text}</p>
-                  <blockquote className={styles.testimonial}>"{card.testimonial}"</blockquote>
-                  <a href={card.link} className={styles.cardLink}>Go somewhere</a>
-                </div>
-              </div>
-            )}
+            {cardJsx(card)}
             <div className={styles.toggleContainer}>
               <button className={`${styles.toggleButton} ${showCss[index] ? styles.active : ''}`} onClick={() => toggleCodeView(index)}>
                 {showCss[index] ? 'CSS' : 'TSX'}
@@ -190,9 +198,9 @@ const CardSection: React.FC = () => {
             </div>
             <div className={styles.codeBlock}>
               <pre>
-                <code>{showCss[index] ? cardCss : cardTsx(card)}</code>
+                <code>{showCss[index] ? cardCss : cardTsxString(card)}</code>
               </pre>
-              <button onClick={() => copyToClipboard(showCss[index] ? cardCss : cardTsx(card))}>Copy {showCss[index] ? 'CSS' : 'TSX'}</button>
+              <button onClick={() => copyToClipboard(showCss[index] ? cardCss : cardTsxString(card))}>Copy {showCss[index] ? 'CSS' : 'TSX'}</button>
             </div>
           </div>
         ))}
