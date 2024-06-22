@@ -8,7 +8,7 @@ import styles from './Components.module.css';
 import HeroSection from '../../components/HeroSection/HeroSection';
 import FeatureSection from '../../components/FeatureSection/FeatureSection';
 import CTASection from '../../components/CTASection/CTASection';
-import PricingSection from '../../components/PricingSection/PricingSection';
+import PricingPage from '../../components/PricingPage/PricingPage';
 import HeaderSection from '../../components/HeaderSection/HeaderSection';
 import FooterSection from '../../components/FooterSection/FooterSection';
 import TestimonialsSection from '../../components/TestimonialsSection/TestimonialsSection';
@@ -41,7 +41,7 @@ import SearchForm from '../../components/SearchForm/SearchForm';
 
 // Importing UI Elements
 import Button from '../../components/Button/Button';
-import Card from '../../components/Card/Card';
+import CardSection from '../../components/CardSection/CardSection';
 /*import Modal from '../../components/Modal/Modal';
 import Tab from '../../components/Tab/Tab';
 import Accordion from '../../components/Accordion/Accordion';
@@ -88,7 +88,7 @@ const Components: React.FC = () => {
     { name: 'Hero Section', category: 'Hero Section', count: 12, component: HeroSection },
     { name: 'Feature Section', category: 'Feature Section', count: 18, component: FeatureSection },
     { name: 'CTA Section', category: 'CTA Section', count: 11, component: CTASection },
-    { name: 'Pricing Section', category: 'Pricing Section', count: 13, component: PricingSection },
+    { name: 'Pricing Page', category: 'Pricing Page', count: 13, component: PricingPage },
     { name: 'Header Section', category: 'Header Section', count: 10, component: HeaderSection },
     { name: 'Footer Section', category: 'Footer Section', count: 7, component: FooterSection },
     { name: 'Testimonials Section', category: 'Testimonials Section', count: 7, component: TestimonialsSection },
@@ -125,7 +125,7 @@ const Components: React.FC = () => {
 
   const uiElements = [
     { name: 'Button', category: 'Button', count: 8, component: Button },
-    { name: 'Card', category: 'Card', count: 12, component: Card },
+    { name: 'Card Section', category: 'Card Section', count: 12, component: CardSection },
     /*{ name: 'Modal', category: 'Modal', count: 5, component: Modal },
     { name: 'Tab', category: 'Tab', count: 4, component: Tab },
     { name: 'Accordion', category: 'Accordion', count: 6, component: Accordion },

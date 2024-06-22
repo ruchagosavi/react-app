@@ -1,0 +1,123 @@
+.cardSectionContainer {
+  padding: 20px;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.cardWrapper {
+  margin: 20px;
+  flex: 1 1 45%;
+  max-width: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.cardImage {
+  background-color: #eee;
+  border-radius: 5px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+.cardContent {
+  margin-top: 15px;
+}
+
+.cardButton {
+  background-color: #dd1e25;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.cardButton:hover {
+  background-color: #b01c24;
+}
+
+.toggleContainer {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.toggleButton {
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #bfbfbf;
+  border-radius: 20px;
+  margin: 0 5px;
+}
+
+.toggleButton.active {
+  background-color: #007bff;
+}
+
+.codeContainer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  position: relative;
+}
+
+.code {
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.copyButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.copyButton.copied {
+  background-color: #28a745;
+}
+
+/* Media Queries */
+@media (max-width: 1024px) {
+  .cardWrapper {
+    flex: 1 1 48%;
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .cardWrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}

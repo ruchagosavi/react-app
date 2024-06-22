@@ -1,0 +1,38 @@
+.pricingPageContainer {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .mainHeading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .pricingDemosContainer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .pricingDemoBox {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+  }
+  
+  .viewDemoButton {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .viewDemoButton:hover {
+    background-color: #0056b3;
+  }
+  

@@ -16,8 +16,21 @@ import Footer from './components/Footer/Footer';
 import HeroSection from './components/HeroSection/HeroSection';
 import Button from './components/Button/Button';
 import NavbarSection from './components/NavbarSection/NavbarSection';
-
-
+import CardSection from './components/CardSection/CardSection';
+import AboutPage from './components/AboutPage/AboutPage';
+import AboutPage1 from './components/AboutPage/AboutPage1';
+import AboutPage2 from './components/AboutPage/AboutPage2';
+import AboutPage3 from './components/AboutPage/AboutPage3';
+import LoginPage from './components/LoginPage/LoginPage';
+import LoginPage1 from './components/LoginPage/LoginPage1';
+import LoginPage2 from './components/LoginPage/LoginPage2';
+import LoginPage3 from './components/LoginPage/LoginPage3';
+import PricingPage from './components/PricingPage/PricingPage';
+import PricingPage1 from './components/PricingPage/PricingPage1';
+import PricingPage2 from './components/PricingPage/PricingPage2';
+import FeatureSection from './components/FeatureSection/FeatureSection';
+import FeatureSection1 from './components/FeatureSection/FeatureSection1';
+import FeatureSection2 from './components/FeatureSection/FeatureSection2';
 import { AuthProvider } from './context/AuthContext';
 
 const App: React.FC = () => {
@@ -36,6 +49,21 @@ const App: React.FC = () => {
           <Route path="/herosection" element={<HeroSection />} />
           <Route path="/button" element={<Button/>} />
           <Route path="/navbarsection" element={<NavbarSection/>} />
+          <Route path="/cardsection" element={<CardSection/>} />
+          <Route path="/aboutpage" element={<AboutPage/>} />
+          <Route path="/aboutpage1" element={<AboutPage1/>} />
+          <Route path="/aboutpage2" element={<AboutPage2/>} />
+          <Route path="/aboutpage3" element={<AboutPage3/>} />
+          <Route path="/loginpage" element={<LoginPage/>} />
+          <Route path="/loginpage1" element={<LoginPage1/>} />
+          <Route path="/loginpage2" element={<LoginPage2/>} />
+          <Route path="/loginpage3" element={<LoginPage3/>} />
+          <Route path="/pricingpage" element={<PricingPage/>} />
+          <Route path="/pricingpage1" element={<PricingPage1/>} />
+          <Route path="/pricingpage2" element={<PricingPage2/>} />
+          <Route path="/featuresection" element={<FeatureSection/>} />
+          <Route path="/featuresection1" element={<FeatureSection1/>} />
+          <Route path="/featuresection2" element={<FeatureSection2/>} />
         </Routes>
         <Footer></Footer>
       </Router>

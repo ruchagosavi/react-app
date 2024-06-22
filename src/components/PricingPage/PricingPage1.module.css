@@ -1,0 +1,98 @@
+.pricingPageContainer {
+    padding: 2rem;
+    text-align: center;
+    background-color: #f8f9fa;
+  }
+  
+  .mainHeading {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .subHeading {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    color: #666;
+  }
+  
+  .toggleContainer {
+    margin-bottom: 2rem;
+  }
+  
+  .toggleButton {
+    background-color: #ddd;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  .toggleButton:hover {
+    background-color: #ccc;
+  }
+  
+  .active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .pricingSection {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+  
+  .pricingCard {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 2rem;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .planName {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .planPrice {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #007bff;
+  }
+  
+  .planDescription {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #666;
+  }
+  
+  .planFeatures {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+  }
+  
+  .planFeatures li {
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .planButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .planButton:hover {
+    background-color: #0056b3;
+  }
+  
