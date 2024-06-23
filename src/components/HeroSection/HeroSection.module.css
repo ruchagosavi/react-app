@@ -1,124 +1,41 @@
-/* src/pages/HeroSection/HeroSection.module.css */
+.heroSection {
+  padding: 2rem;
+  background-color: #f8f9fa;
+  text-align: center;
+}
 
-.heroSectionsPage {
-    padding: 2rem;
-  }
-  
-  .heroSection {
-    margin-bottom: 2rem;
-  }
-  
-  .hero {
-    padding: 4rem 2rem;
-    background-color: #f4f4f4;
-    text-align: center;
-  }
-  
-  .heroFeature {
-    padding: 4rem 2rem;
-    background-color: #e0f7fa;
-    text-align: center;
-  }
-  
-  .heroCTA {
-    padding: 4rem 2rem;
-    background-color: #fff3e0;
-    text-align: center;
-  }
-  
-  .container {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-  }
-  
-  .ctaButton {
-    padding: 1rem 2rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .ctaButton:hover {
-    background-color: #0056b3;
-  }
-  
-  .card {
-    background-color: #ff9800;
-    padding: 2rem;
-    border-radius: 8px;
-  }
-  
-  .copyButton {
-    margin-top: 1rem;
-    padding: 0.5rem 1rem;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .copyButton:hover {
-    background-color: #388e3c;
-  }
-  
-  .codeBlock {
-    background-color: #272822;
-    color: #f8f8f2;
-    padding: 1rem;
-    border-radius: 4px;
-    margin-top: 1rem;
-    white-space: pre-wrap;
-  }
-  
-  /* Media queries for responsiveness */
-  
-  @media (max-width: 768px) {
-    .title {
-      font-size: 2rem;
-    }
-  
-    .subtitle {
-      font-size: 1rem;
-    }
-  
-    .ctaButton {
-      padding: 0.8rem 1.5rem;
-    }
-  
-    .card {
-      padding: 1.5rem;
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .title {
-      font-size: 1.5rem;
-    }
-  
-    .subtitle {
-      font-size: 0.875rem;
-    }
-  
-    .ctaButton {
-      padding: 0.6rem 1rem;
-    }
-  
-    .card {
-      padding: 1rem;
-    }
-  }
-  
+.mainHeading {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.heroGrid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.heroBox {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 2rem;
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.demoButton {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.demoButton:hover {
+  background-color: #0056b3;
+}

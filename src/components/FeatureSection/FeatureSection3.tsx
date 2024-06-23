@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import styles from './FeatureSection2.module.css';
+import styles from './FeatureSection3.module.css';
 
-const FeatureSection2: React.FC = () => {
+const FeatureSection3: React.FC = () => {
   const [showTSX, setShowTSX] = useState(true);
 
   const handleToggle = () => {
@@ -10,37 +10,24 @@ const FeatureSection2: React.FC = () => {
 
   const tsxCode = `
 import React from 'react';
-import styles from './FeatureSection2.module.css';
+import styles from './FeatureSection3.module.css';
 
-const FeatureSection2: React.FC = () => {
+const FeatureSection3: React.FC = () => {
   return (
     <div className={styles.featureSectionContainer}>
       <div className={styles.textContainer}>
-        <h1>Deploy faster</h1>
-        <h2>A better workflow</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</p>
+        <h2>Everything you need</h2>
+        <h1>All-in-one platform</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</p>
         <ul className={styles.features}>
-          <li>
-            <div className={styles.icon}>🚀</div>
-            <div>
-              <h3>Push to deploy</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</p>
-            </div>
-          </li>
-          <li>
-            <div className={styles.icon}>🔒</div>
-            <div>
-              <h3>SSL certificates</h3>
-              <p>Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.</p>
-            </div>
-          </li>
-          <li>
-            <div className={styles.icon}>💾</div>
-            <div>
-              <h3>Database backups</h3>
-              <p>Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</p>
-            </div>
-          </li>
+          <li>Invite team members</li>
+          <li>Keyboard shortcuts</li>
+          <li>Notifications</li>
+          <li>Reporting</li>
+          <li>List view</li>
+          <li>Calendars</li>
+          <li>Boards</li>
+          <li>Mobile app</li>
         </ul>
       </div>
       <div className={styles.imageContainer}>
@@ -50,7 +37,7 @@ const FeatureSection2: React.FC = () => {
   );
 };
 
-export default FeatureSection2;
+export default FeatureSection3;
 `;
 
   const cssCode = `
@@ -69,36 +56,46 @@ export default FeatureSection2;
 .textContainer h1 {
   font-size: 36px;
   margin-bottom: 10px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .textContainer h2 {
   font-size: 28px;
   margin-bottom: 20px;
+  color: #4a5568;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .textContainer p {
   font-size: 16px;
   margin-bottom: 30px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
 .features {
   list-style: none;
   padding: 0;
+  columns: 2;
 }
 
 .features li {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  font-size: 18px;
+  color: #2d3748;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
-.icon {
-  font-size: 40px;
-  margin-right: 20px;
+.features li::before {
+  content: '✔';
+  margin-right: 10px;
+  color: #3182ce;
 }
 
 .imageContainer {
   max-width: 800px;
+  padding-left: 50px;
 }
 
 .imageContainer img {
@@ -141,7 +138,7 @@ export default FeatureSection2;
   max-width: 1000px;
   margin: 0 auto;
   overflow-x: auto;
-  max-height: 200px;
+  max-height: 300px; /* Adjust height for scrolling */
 }
 
 .copyButton {
@@ -161,31 +158,18 @@ export default FeatureSection2;
     <div>
       <div className={styles.featureSectionContainer}>
         <div className={styles.textContainer}>
-          <h1>Deploy faster</h1>
-          <h2>A better workflow</h2>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</p>
+          <h2>Everything you need</h2>
+          <h1>All-in-one platform</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</p>
           <ul className={styles.features}>
-            <li>
-              <div className={styles.icon}>🚀</div>
-              <div>
-                <h3>Push to deploy</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</p>
-              </div>
-            </li>
-            <li>
-              <div className={styles.icon}>🔒</div>
-              <div>
-                <h3>SSL certificates</h3>
-                <p>Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.</p>
-              </div>
-            </li>
-            <li>
-              <div className={styles.icon}>💾</div>
-              <div>
-                <h3>Database backups</h3>
-                <p>Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</p>
-              </div>
-            </li>
+            <li>Invite team members</li>
+            <li>Keyboard shortcuts</li>
+            <li>Notifications</li>
+            <li>Reporting</li>
+            <li>List view</li>
+            <li>Calendars</li>
+            <li>Boards</li>
+            <li>Mobile app</li>
           </ul>
         </div>
         <div className={styles.imageContainer}>
@@ -220,4 +204,4 @@ export default FeatureSection2;
   );
 };
 
-export default FeatureSection2;
+export default FeatureSection3;

@@ -1,0 +1,106 @@
+.ctaSection {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: #fff;
+    padding: 50px;
+  }
+  
+  .textContainer {
+    max-width: 500px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .primaryButton {
+    background-color: #7f56d9;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+  }
+  
+  .secondaryButton {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+  }
+  
+  .imageContainer {
+    margin-left: 2rem;
+  }
+  
+  .imageContainer img {
+    border-radius: 10px;
+  }
+  
+  .codeSection {
+    background-color: white;
+    color: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+  
+  .codeHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .toggleButtons {
+    display: flex;
+    gap: 10px;
+    margin: 0 auto;
+  }
+  
+  .toggleButton {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .toggleButton.active {
+    background-color: #7f56d9;
+  }
+  
+  .codeBlock {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: auto;
+    max-height: 400px;
+  }
+  
+  .copyButton {
+    background-color: #7f56d9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  

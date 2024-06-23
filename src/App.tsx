@@ -13,7 +13,6 @@ import Login from './pages/Login/Login';
 
 import Footer from './components/Footer/Footer';
 
-import HeroSection from './components/HeroSection/HeroSection';
 import Button from './components/Button/Button';
 import NavbarSection from './components/NavbarSection/NavbarSection';
 import CardSection from './components/CardSection/CardSection';
@@ -31,6 +30,15 @@ import PricingPage2 from './components/PricingPage/PricingPage2';
 import FeatureSection from './components/FeatureSection/FeatureSection';
 import FeatureSection1 from './components/FeatureSection/FeatureSection1';
 import FeatureSection2 from './components/FeatureSection/FeatureSection2';
+import FeatureSection3 from './components/FeatureSection/FeatureSection3';
+import CTASection from './components/CTASection/CTASection';
+import CTASection1 from './components/CTASection/CTASection1';
+import CTASection2 from './components/CTASection/CTASection2';
+import CTASection3 from './components/CTASection/CTASection3';
+import HeroSection from './components/HeroSection/HeroSection';
+import HeroSection1 from './components/HeroSection/HeroSection1';
+import HeroSection2 from './components/HeroSection/HeroSection2';
+//import HeroSection3 from './components/HeroSection/HeroSection3';
 import { AuthProvider } from './context/AuthContext';
 
 const App: React.FC = () => {
@@ -46,7 +54,6 @@ const App: React.FC = () => {
           <Route path="/examples" element={<Examples />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/herosection" element={<HeroSection />} />
           <Route path="/button" element={<Button/>} />
           <Route path="/navbarsection" element={<NavbarSection/>} />
           <Route path="/cardsection" element={<CardSection/>} />
@@ -64,6 +71,14 @@ const App: React.FC = () => {
           <Route path="/featuresection" element={<FeatureSection/>} />
           <Route path="/featuresection1" element={<FeatureSection1/>} />
           <Route path="/featuresection2" element={<FeatureSection2/>} />
+          <Route path="/featuresection3" element={<FeatureSection3/>} />
+          <Route path="/ctasection" element={<CTASection/>} />
+          <Route path="/ctasection1" element={<CTASection1/>} />
+          <Route path="/ctasection2" element={<CTASection2/>} />
+          <Route path="/ctasection3" element={<CTASection3/>} />
+          <Route path="/herosection" element={<HeroSection />} />
+          <Route path="/herosection1" element={<HeroSection1 />} />
+          <Route path="/herosection2" element={<HeroSection2 />} />
         </Routes>
         <Footer></Footer>
       </Router>

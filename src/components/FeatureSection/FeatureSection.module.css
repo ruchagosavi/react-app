@@ -1,7 +1,7 @@
-.featureSectionContainer {
+.featureSection {
     padding: 2rem;
-    text-align: center;
     background-color: #f8f9fa;
+    text-align: center;
   }
   
   .mainHeading {
@@ -11,8 +11,9 @@
   }
   
   .featureGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     gap: 2rem;
   }
   
@@ -20,59 +21,22 @@
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
+    padding: 2rem;
+    width: 300px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    padding: 1rem;
-    text-align: left;
   }
   
-  .featureImage {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
-    margin-bottom: 1rem;
-  }
-  
-  .featureTitle {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  .featureDescription {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    color: #666;
-  }
-  
-  .viewDemoButton {
+  .demoButton {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
     background-color: #007bff;
     color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
     text-decoration: none;
-    display: inline-block;
-    text-align: center;
+    border-radius: 5px;
   }
   
-  .viewDemoButton:hover {
+  .demoButton:hover {
     background-color: #0056b3;
-  }
-  
-  /* Media Queries */
-  @media (max-width: 768px) {
-    .featureSectionContainer {
-      padding: 1rem;
-    }
-  
-    .mainHeading {
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-    }
-  
-    .featureGrid {
-      grid-template-columns: 1fr;
-    }
   }
   
