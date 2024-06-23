@@ -1,0 +1,8 @@
+.template {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* Additional styles for individual sections can be added here */
+  

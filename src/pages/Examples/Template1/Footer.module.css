@@ -1,0 +1,32 @@
+.footer {
+    padding: 40px 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .footerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+  
+  .socialMedia a, .footerLinks a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .socialMedia a:hover, .footerLinks a:hover {
+    color: #ffcd41;
+  }
+  
+  .copyRight {
+    margin-top: 20px;
+    font-size: 0.9rem;
+  }
+  
