@@ -39,6 +39,10 @@ import HeroSection from './components/HeroSection/HeroSection';
 import HeroSection1 from './components/HeroSection/HeroSection1';
 import HeroSection2 from './components/HeroSection/HeroSection2';
 //import HeroSection3 from './components/HeroSection/HeroSection3';
+import LoginForm from './components/LoginForm/LoginForm';
+import LoginForm1 from './components/LoginForm/LoginForm1';
+import LoginForm2 from './components/LoginForm/LoginForm2';
+import LoginForm3 from './components/LoginForm/LoginForm3';
 import Template1 from './pages/Examples/Template1/Template1';
 import { AuthProvider } from './context/AuthContext';
 
@@ -81,6 +85,10 @@ const App: React.FC = () => {
           <Route path="/herosection1" element={<HeroSection1 />} />
           <Route path="/herosection2" element={<HeroSection2 />} />
           <Route path="/examples/template1" element={<Template1 />} />
+          <Route path="/loginform" element={<LoginForm />} />
+          <Route path="/loginform1" element={<LoginForm1 />} />
+          <Route path="/loginform2" element={<LoginForm2 />} />
+          <Route path="/loginform3" element={<LoginForm3 />} />
         </Routes>
         <Footer></Footer>
       </Router>

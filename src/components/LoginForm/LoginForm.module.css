@@ -1,0 +1,46 @@
+.container {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .formBoxes {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .formBox {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .formBox:hover {
+    transform: translateY(-5px);
+  }
+  
+  .previewImage {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .demoButton {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #d70018;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .demoButton:hover {
+    background-color: #a50014;
+  }
+  
