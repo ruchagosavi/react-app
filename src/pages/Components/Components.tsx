@@ -51,7 +51,7 @@ import Alert from '../../components/Alert/Alert';
 import Badge from '../../components/Badge/Badge';*/
 // import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
 // import Pagination from '../../components/Pagination/Pagination';
-// import ProgressBar from '../../components/ProgressBar/ProgressBar';
+ import ProgressBar from '../../components/ProgressBar/ProgressBar';
 // import Spinner from '../../components/Spinner/Spinner';
 // import Table from '../../components/Table/Table';
 // import List from '../../components/List/List';
@@ -126,6 +126,7 @@ const Components: React.FC = () => {
   const uiElements = [
     { name: 'Button', category: 'Button', count: 8, component: Button },
     { name: 'Card Section', category: 'Card Section', count: 12, component: CardSection },
+    { name: 'Progress Bar', category: 'Progress Bar', count: 12, component: ProgressBar },
     /*{ name: 'Modal', category: 'Modal', count: 5, component: Modal },
     { name: 'Tab', category: 'Tab', count: 4, component: Tab },
     { name: 'Accordion', category: 'Accordion', count: 6, component: Accordion },
