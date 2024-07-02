@@ -1,166 +1,202 @@
 .progressContainer {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.progressBar {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 33%;
+}
+
+.step {
+  font-size: 14px;
+  padding: 10px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.step.active {
+  border-color: #3b82f6;
+  color: white;
+  background-color: #3b82f6;
+}
+
+.description {
+  font-size: 12px;
+  color: #555;
+}
+
+.newProgressContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.newProgressBar {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+}
+
+.newStep {
+  width: 30px;
+  height: 30px;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  transition: all 0.3s ease-in-out;
+}
+
+.newStep.active {
+  border-color: #3b82f6;
+  color: white;
+  background-color: #3b82f6;
+}
+
+.thirdProgressContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.thirdProgressBar {
+  width: 80%;
+  height: 5px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.thirdProgress {
+  height: 100%;
+  background-color: #3b82f6;
+  width: 0;
+  border-radius: 5px;
+  position: absolute;
+  transition: width 1s ease-in-out;
+}
+
+.thirdSteps {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.thirdStep {
+  font-size: 12px;
+  color: #555;
+}
+
+.fourthProgressContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.fourthProgressBar {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  padding: 10px;
+}
+
+.fourthStep {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  margin-bottom: 5px;
   }
-  
-  .progressBar {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
-  }
-  
-  .stepContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 33%;
-  }
-  
-  .step {
-    font-size: 14px;
-    padding: 10px 15px;
-    border: 2px solid #e0e0e0;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    margin-bottom: 5px;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .step.active {
-    border-color: #3b82f6;
-    color: white;
-    background-color: #3b82f6;
-  }
-  
-  .description {
-    font-size: 12px;
-    color: #555;
-  }
-  
-  .newProgressContainer {
-    display: flex;
-    justify-content: center;
-    margin: 20px 0;
-  }
-  
-  .newProgressBar {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-    border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 10px;
-    background-color: #f9f9f9;
-  }
-  
-  .newStep {
-    width: 30px;
-    height: 30px;
-    border: 2px solid #e0e0e0;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f9f9f9;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .newStep.active {
-    border-color: #3b82f6;
-    color: white;
-    background-color: #3b82f6;
-  }
-  
-  .thirdProgressContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 0;
-  }
-  
-  .thirdProgressBar {
-    width: 80%;
-    height: 5px;
-    background-color: #e0e0e0;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    position: relative;
-  }
-  
-  .thirdProgress {
-    height: 100%;
-    background-color: #3b82f6;
-    width: 0;
-    border-radius: 5px;
-    position: absolute;
-    transition: width 1s ease-in-out;
-  }
-  
-  .thirdSteps {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-  }
-  
-  .thirdStep {
-    font-size: 12px;
-    color: #555;
-  }
-  
-  .codeBox {
-    margin-top: 20px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #2d2d2d;
-    color: #fff;
-    max-height: 300px;
-    overflow-y: scroll;
-    position: relative; /* Add this line */
-  }
-  
-  .toggleButtons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-  
-  .toggleButton {
-    padding: 5px 10px;
-    cursor: pointer;
-    border: 1px solid #ddd;
-    background-color: #444;
-    color: #fff;
-    border-radius: 3px;
-  }
-  
-  .toggleButton.active {
-    background-color: #3b82f6;
-    border-color: #3b82f6;
-  }
-  
-  .copyButton {
-    padding: 5px 10px;
-    cursor: pointer;
-    border: 1px solid #ddd;
-    background-color: #444;
-    color: #fff;
-    border-radius: 3px;
-    position: absolute; /* Add this line */
-    top: 10px; /* Add this line */
-    right: 10px;
-  }
-  
-  .heading {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 24px;
-    color: #333;
-  }
-  
+
+.fourthStep.active .circle {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.stepLabel {
+  font-size: 12px;
+  color: #555;
+}
+
+.codeBox {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #2d2d2d;
+  color: #fff;
+  max-height: 300px;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.toggleButtons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.toggleButton {
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background-color: #444;
+  color: #fff;
+  border-radius: 3px;
+}
+
+.toggleButton.active {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.copyButton {
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  background-color: #444;
+  color: #fff;
+  border-radius: 3px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.heading {
+  margin-top: 40px;
+  text-align: center;
+  font-size: 24px;
+  color: #333;
+}

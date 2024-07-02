@@ -203,6 +203,69 @@ export default ThirdProgressBar;`;
   color: #555;
 }`;
 
+  const fourthProgressBarTSXCode = `import React, { useState } from 'react';
+import styles from './ProgressBar.module.css';
+
+const FourthProgressBar: React.FC = () => {
+  const [activeStep, setActiveStep] = useState(1);
+
+  return (
+    <div className={styles.fourthProgressContainer}>
+      <div className={styles.fourthProgressBar}>
+        {[...Array(4)].map((_, index) => (
+          <div
+            key={index}
+            className={\`\${styles.fourthStep} \${activeStep > index ? styles.active : ''}\`}
+            onClick={() => setActiveStep(index + 1)}
+          >
+            <div className={styles.circle}></div>
+            <div className={styles.stepLabel}>Step {index + 1}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default FourthProgressBar;`;
+
+  const fourthProgressBarCSSCode = `.fourthProgressContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.fourthProgressBar {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  padding: 10px;
+}
+
+.fourthStep {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e0e0e0;
+  border-radius: 50%;
+  margin-bottom: 5px;
+}
+
+.fourthStep.active .circle {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+.stepLabel {
+  font-size: 12px;
+  color: #555;
+}`;
+
   const handleCopyCode = (code: string) => {
     navigator.clipboard.writeText(code).then(() => {
       alert('Code copied to clipboard!');
@@ -318,6 +381,45 @@ export default ThirdProgressBar;`;
           Copy
         </button>
         <pre>{codeType === 'tsx' ? thirdProgressBarTSXCode : thirdProgressBarCSSCode}</pre>
+      </div>
+
+      <h2 className={styles.heading}>Progress Bar 4</h2>
+      <div className={styles.fourthProgressContainer}>
+        <div className={styles.fourthProgressBar}>
+          {[...Array(4)].map((_, index) => (
+            <div
+              key={index}
+              className={`${styles.fourthStep} ${activeStep > index ? styles.active : ''}`}
+              onClick={() => setActiveStep(index + 1)}
+            >
+              <div className={styles.circle}></div>
+              <div className={styles.stepLabel}>Step {index + 1}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className={styles.codeBox}>
+        <div className={styles.toggleButtons}>
+          <button
+            className={`${styles.toggleButton} ${codeType === 'tsx' ? styles.active : ''}`}
+            onClick={() => setCodeType('tsx')}
+          >
+            TSX
+          </button>
+          <button
+            className={`${styles.toggleButton} ${codeType === 'css' ? styles.active : ''}`}
+            onClick={() => setCodeType('css')}
+          >
+            CSS
+          </button>
+        </div>
+        <button
+          className={styles.copyButton}
+          onClick={() => handleCopyCode(fourthProgressBarTSXCode)}
+        >
+          Copy
+        </button>
+        <pre>{codeType === 'tsx' ? fourthProgressBarTSXCode : fourthProgressBarCSSCode}</pre>
       </div>
     </div>
   );
