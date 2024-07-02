@@ -1,0 +1,124 @@
+.dropdownContainer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dropdown, .dropdown2, .dropdown3 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .dropdownButton, .dropdownButton2, .dropdownButton3 {
+    background-color: #f8f8f8;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdownButton:hover, .dropdownButton2:hover, .dropdownButton3:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .dropdownButton::after, .dropdownButton2::after, .dropdownButton3::after {
+    content: ' ▼';
+    font-size: 12px;
+    margin-left: 8px;
+  }
+  
+  .dropdownMenu, .dropdownMenu2, .dropdownMenu3 {
+    display: block;
+    position: absolute;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    z-index: 1;
+    margin-top: 8px;
+    padding: 10px 0;
+  }
+  
+  .dropdownItem, .dropdownItem2, .dropdownItem3 {
+    color: #333;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdownItem:hover, .dropdownItem2:hover, .dropdownItem3:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .icon {
+    margin-right: 10px;
+  }
+  
+  .dropdownHeader {
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #555;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  
+  .codeBox {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #2d2d2d;
+    color: #fff;
+    max-height: 300px;
+    overflow-y: scroll;
+    position: relative;
+  }
+  
+  .toggleButtons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .toggleButton {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background-color: #444;
+    color: #fff;
+    border-radius: 3px;
+  }
+  
+  .toggleButton.active {
+    background-color: #3b82f6;
+    border-color: #3b82f6;
+  }
+  
+  .copyButton {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    background-color: #444;
+    color: #fff;
+    border-radius: 3px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .heading {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
