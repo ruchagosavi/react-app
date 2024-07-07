@@ -48,7 +48,7 @@ import Accordion from '../../components/Accordion/Accordion';
 import Tooltip from '../../components/Tooltip/Tooltip';
 import Alert from '../../components/Alert/Alert';
 import Badge from '../../components/Badge/Badge';*/
-// import Breadcrumb from '../../components/Breadcrumb/Breadcrumb';
+import Breadcrumb from '../../components/BreadCrumb/Breadcrumb';
 // import Pagination from '../../components/Pagination/Pagination';
 import Dropdown from '../../components/Dropdown/Dropdown';
  import ProgressBar from '../../components/ProgressBar/ProgressBar';

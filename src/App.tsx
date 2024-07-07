@@ -14,6 +14,7 @@ import Login from './pages/Login/Login';
 import Footer from './components/Footer/Footer';
 
 import Button from './components/Button/Button';
+import Breadcrumb from './components/Breadcrumb/Breadcrumb';
 import NavbarSection from './components/NavbarSection/NavbarSection';
 import CardSection from './components/CardSection/CardSection';
 import AboutPage from './components/AboutPage/AboutPage';
@@ -39,6 +40,8 @@ import HeroSection from './components/HeroSection/HeroSection';
 import HeroSection1 from './components/HeroSection/HeroSection1';
 import HeroSection2 from './components/HeroSection/HeroSection2';
 //import HeroSection3 from './components/HeroSection/HeroSection3';
+import HeaderSection from './components/HeaderSection/HeaderSection';
+import HeaderSection1 from './components/HeaderSection/HeaderSection1';
 import LoginForm from './components/LoginForm/LoginForm';
 import LoginForm1 from './components/LoginForm/LoginForm1';
 import LoginForm2 from './components/LoginForm/LoginForm2';
@@ -62,6 +65,7 @@ const App: React.FC = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
           <Route path="/button" element={<Button/>} />
+          <Route path="/breadcrumb" element={<Breadcrumb/>} />
           <Route path="/navbarsection" element={<NavbarSection/>} />
           <Route path="/cardsection" element={<CardSection/>} />
           <Route path="/aboutpage" element={<AboutPage/>} />
@@ -86,6 +90,8 @@ const App: React.FC = () => {
           <Route path="/herosection" element={<HeroSection />} />
           <Route path="/herosection1" element={<HeroSection1 />} />
           <Route path="/herosection2" element={<HeroSection2 />} />
+          <Route path="/headersection" element={<HeaderSection />} />
+          <Route path="/headersection1" element={<HeaderSection1 />} />
           <Route path="/examples/template1" element={<Template1 />} />
           <Route path="/loginform" element={<LoginForm />} />
           <Route path="/loginform1" element={<LoginForm1 />} />
